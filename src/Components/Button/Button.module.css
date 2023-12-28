@@ -27,8 +27,8 @@
 
 @media screen and (max-width: 767px) {
   .button {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 23px;
-    padding: 8px 10px;
+    padding: 8px 16px;
   }
 }

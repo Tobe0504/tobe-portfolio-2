@@ -3,6 +3,7 @@ import classes from "./Header.module.css";
 import memoji from "../../Assets/Images/memoji.svg";
 import SideNav from "../SideNav/SideNav";
 import { useRef } from "react";
+import { navItems } from "../../Utilities/navItems";
 
 const Header = () => {
   const sideNavContainer = useRef<HTMLDivElement | null>(null);
@@ -18,8 +19,13 @@ const Header = () => {
   return (
     <div className={classes.container}>
       <img src={memoji} alt="Memoji" />
-      <Link to="/work">Work</Link>
-      <Link to="/about-me">About me</Link>
+      {navItems.map((data, i) => {
+        return (
+          <Link to={data.route} key={i}>
+            {data.name}
+          </Link>
+        );
+      })}
 
       <svg
         xmlns="http://www.w3.org/2000/svg"

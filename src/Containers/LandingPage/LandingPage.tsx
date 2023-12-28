@@ -6,6 +6,7 @@ import classes from "./LandingPage.module.css";
 const LandingPage = () => {
   // Router
   const navigate = useNavigate();
+
   return (
     <Layout>
       <section className={classes.container}>
@@ -22,11 +23,14 @@ const LandingPage = () => {
             My works
           </Button>
         </div>
-
-        <img
-          src="https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703779700/IMG_2084_f1xr3u.jpg"
-          alt="Ezimorah Tobenna"
-        />
+        <div className={classes.imageSection}>
+          <div></div>
+          <div></div>
+          <img
+            src="https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703779700/IMG_2084_f1xr3u.jpg"
+            alt="Ezimorah Tobenna"
+          />
+        </div>
       </section>
     </Layout>
   );

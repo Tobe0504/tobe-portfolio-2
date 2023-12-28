@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { navItems } from "../../Utilities/navItems";
 import classes from "./SideNav.module.css";
 
 type SideNavProps = {
@@ -26,9 +27,13 @@ const SideNav = ({ closeSideNav }: SideNavProps) => {
           />
         </svg>
       </div>
-
-      <Link to="/work">Work</Link>
-      <Link to="/about-me">About me</Link>
+      {navItems.map((data, i) => {
+        return (
+          <Link to={data.route} key={i}>
+            {data.name}
+          </Link>
+        );
+      })}
     </section>
   );
 };
