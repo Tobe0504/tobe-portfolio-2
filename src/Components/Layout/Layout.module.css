@@ -9,3 +9,27 @@
   top: 0;
   z-index: 1;
 }
+
+.body {
+  min-height: calc(100vh - 86px);
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .header {
+    height: 70px;
+  }
+
+  .body {
+    min-height: calc(100vh - 76px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: 70px;
+  }
+
+  .body {
+    min-height: calc(100vh - 76px);
+  }
+}

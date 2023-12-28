@@ -1,0 +1,22 @@
+.container {
+  background: #000;
+  height: 100%;
+  padding: 2rem;
+}
+
+.close {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.container > a {
+  color: #fff;
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 2rem;
+}

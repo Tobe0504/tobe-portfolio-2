@@ -5,6 +5,7 @@
   align-items: center;
   gap: 72px;
   padding: 1rem 70px;
+  position: relative;
 }
 
 .container > img {
@@ -25,4 +26,61 @@
   font-weight: 500;
   line-height: normal;
   text-decoration: none;
+}
+
+.container > svg {
+  display: none;
+  margin-left: auto;
+}
+
+.sideNav {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  background-color: var(--white);
+  overflow: hidden;
+  width: 0%;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    padding: 1rem;
+    height: 70px;
+  }
+
+  .container > img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .container > a {
+    display: none;
+  }
+
+  .container > svg {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 1rem;
+    height: 70px;
+  }
+
+  .container > img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .container > a {
+    display: none;
+  }
+
+  .container > svg {
+    display: block;
+  }
 }
