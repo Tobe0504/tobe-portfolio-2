@@ -1,0 +1,32 @@
+.container {
+  padding: 40px 100px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: calc(100vh - 86px);
+}
+
+.leftSection {
+  width: 50%;
+}
+
+.leftSection > h4 {
+  color: #fff;
+  font-family: Satoshi;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 144.5%;
+  margin-bottom: 2rem;
+}
+
+.leftSection > h4 > span {
+  color: #faea50;
+}
+
+.container > img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  border: 2px solid red;
+}
