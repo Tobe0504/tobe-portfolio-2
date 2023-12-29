@@ -76,3 +76,27 @@
 .visit:hover > svg {
   display: none;
 }
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .visit {
+    height: 30px;
+    width: 30px;
+  }
+
+  .visit > div {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .visit {
+    height: 30px;
+    width: 30px;
+  }
+
+  .visit > div {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
