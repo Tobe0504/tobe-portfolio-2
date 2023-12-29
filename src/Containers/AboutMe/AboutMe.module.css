@@ -1,0 +1,389 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 26px;
+  padding: 40px 70px;
+}
+
+.container > div:not(.buttonSection) {
+  border-radius: 7.758px;
+  background: #fff;
+  padding: 23px;
+}
+
+.container > div:nth-child(1),
+.container > div:nth-child(2),
+.container > div:nth-child(3) {
+  flex: 30%;
+}
+
+.container > div:nth-child(1) > img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.container > div:nth-child(1) > h4,
+.container > div:nth-child(2) > h4 {
+  color: #393e4d;
+  font-family: Satoshi;
+  font-size: 23.274px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.container > div:nth-child(1) > p {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 15.516px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25.214px;
+}
+
+.skillsContainer {
+  margin-top: 1.5rem;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.skills > span:nth-child(1) {
+  width: 62px;
+}
+
+.skills > span:nth-child(2) {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container > div:nth-child(3) > h3 {
+  color: #393e4d;
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+
+.container > div:nth-child(3) > h4 {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.container > div:nth-child(3) > p:nth-child(3) {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  margin: 1rem 0;
+}
+
+.container > div:nth-child(3) > p:nth-child(4) {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.container > div:nth-child(4) {
+  flex: 100%;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.container > div:nth-child(4) > h4 {
+  color: #393e4d;
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 1.5rem;
+}
+
+.experience {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.experience > p {
+  flex: 2;
+}
+
+.experience > p:nth-child(2) {
+  flex: 1;
+}
+
+.experience > p:nth-child(1) {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.experience > p:nth-child(2) {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.experience > p:nth-child(3) {
+  color: var(--text, #404553);
+  font-family: Satoshi;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.buttonSection {
+  background: #000;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    gap: 24px;
+    padding: 32px 16px;
+  }
+
+  .container > div:not(.buttonSection) {
+    border-radius: 7.758px;
+    background: #fff;
+    padding: 23px;
+  }
+
+  .container > div:nth-child(1),
+  .container > div:nth-child(2),
+  .container > div:nth-child(3) {
+    flex: 100%;
+  }
+
+  .container > div:nth-child(1) > h4,
+  .container > div:nth-child(2) > h4 {
+    color: #393e4d;
+    font-size: 18px;
+  }
+
+  .container > div:nth-child(1) > p {
+    color: var(--text, #404553);
+    font-family: Satoshi;
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .skillsContainer {
+    margin-top: 1.5rem;
+  }
+
+  .skills {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .skills > span:nth-child(1) {
+    width: 62px;
+  }
+
+  .skills > span:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .container > div:nth-child(3) > h3 {
+    font-size: 20px;
+  }
+
+  .container > div:nth-child(3) > h4 {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .container > div:nth-child(3) > p:nth-child(3) {
+    font-size: 14px;
+    line-height: 140%;
+    margin: 1rem 0;
+  }
+
+  .container > div:nth-child(3) > p:nth-child(4) {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .container > div:nth-child(4) {
+    flex: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .container > div:nth-child(4) > h4 {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .experience {
+    flex-direction: column;
+  }
+
+  .experience > p {
+    flex: 2;
+  }
+
+  .experience > p:nth-child(2) {
+    flex: 1;
+  }
+
+  .experience > p:nth-child(1) {
+    font-size: 16px;
+  }
+
+  .experience > p:nth-child(2) {
+    font-size: 14px;
+  }
+
+  .experience > p:nth-child(3) {
+    font-size: 14px;
+  }
+
+  .buttonSection {
+    background: #000;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    gap: 24px;
+    padding: 32px 16px;
+  }
+
+  .container > div:not(.buttonSection) {
+    border-radius: 7.758px;
+    background: #fff;
+    padding: 23px;
+  }
+
+  .container > div:nth-child(1),
+  .container > div:nth-child(2),
+  .container > div:nth-child(3) {
+    flex: 100%;
+  }
+
+  .container > div:nth-child(1) > h4,
+  .container > div:nth-child(2) > h4 {
+    color: #393e4d;
+    font-size: 18px;
+  }
+
+  .container > div:nth-child(1) > p {
+    color: var(--text, #404553);
+    font-family: Satoshi;
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .skillsContainer {
+    margin-top: 1.5rem;
+  }
+
+  .skills {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .skills > span:nth-child(1) {
+    width: 62px;
+  }
+
+  .skills > span:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .container > div:nth-child(3) > h3 {
+    font-size: 20px;
+  }
+
+  .container > div:nth-child(3) > h4 {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .container > div:nth-child(3) > p:nth-child(3) {
+    font-size: 14px;
+    line-height: 140%;
+    margin: 1rem 0;
+  }
+
+  .container > div:nth-child(3) > p:nth-child(4) {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .container > div:nth-child(4) {
+    flex: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .container > div:nth-child(4) > h4 {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .experience {
+    flex-direction: column;
+  }
+
+  .experience > p {
+    flex: 2;
+  }
+
+  .experience > p:nth-child(2) {
+    flex: 1;
+  }
+
+  .experience > p:nth-child(1) {
+    font-size: 16px;
+  }
+
+  .experience > p:nth-child(2) {
+    font-size: 14px;
+  }
+
+  .experience > p:nth-child(3) {
+    font-size: 14px;
+  }
+
+  .buttonSection {
+    background: #000;
+  }
+}

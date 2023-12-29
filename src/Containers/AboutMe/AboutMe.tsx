@@ -1,8 +1,73 @@
 import Layout from "../../Components/Layout/Layout";
 import classes from "./AboutMe.module.css";
 import mempji from "../../Assets/Images/memoji.svg";
+import ProgressBar from "../../Components/ProgressBar/ProgressBar";
+import Button from "../../Components/Button/Button";
 
 const AboutMe = () => {
+  const skills = [
+    {
+      title: "HTML",
+      progress: 0.9,
+    },
+    {
+      title: "CSS",
+      progress: 0.8,
+    },
+    {
+      title: "ReactJs",
+      progress: 0.8,
+    },
+    {
+      title: "React Context API",
+      progress: 0.8,
+    },
+    {
+      title: "NextJs",
+      progress: 0.8,
+    },
+    {
+      title: "VueJs",
+      progress: 0.6,
+    },
+  ];
+
+  const experience = [
+    {
+      roleAndCompany:
+        "Frontend Engineering Student/Zuri Training/Intern (Virtual)",
+      timeline: "Jun 2020 - Jan 2021",
+      workdone:
+        "Gained hands-on experience with JavaScript, CSS, HTML, React, React Hooks and tech principles whilst working on team/individual projects, code reviews, and pair programming session",
+    },
+    {
+      roleAndCompany:
+        "Frontend Engineering Student/SideHustle Training/Intern (Virtual)",
+      timeline: "Oct 2021 - Jan 2021",
+      workdone:
+        "Worked on real life projects with a team from various stacks including UI/UX designers, Project Managers and Backend Developers.",
+    },
+    {
+      roleAndCompany: "Lead Frontend Developer | Your Study Path",
+      timeline: "April 2022 - September 2023",
+      workdone:
+        "As the Lead Frontend Developer at Your Study Path, I spearheaded the development of an innovative EdTech platform using ReactJS. In this pivotal role, I played a key part in crafting a dynamic and user-friendly interface for the platform, ensuring an optimal user experience for students and educators alike.",
+    },
+    {
+      roleAndCompany:
+        "Frontend Developer | Dukia Gold Precious Metals and Refineries",
+      timeline: "July 20223- October 2023",
+      workdone:
+        "As a Frontend Developer at Dukia Gold Precious Metals and Refineries, I was part of the development of a forward-thinking fintech platform, revolutionizing the way users buy and sell gold from their phones. Taking charge of the frontend components, I ensured the creation of an intuitive, visually appealing interface for seamless transactions. Collaborating with cross-functional teams, I integrated secure payment gateways and real-time updates, enhancing transparency in gold transactions.",
+    },
+    {
+      roleAndCompany: "Lead Frontend Developer | Ise",
+      timeline: "October 2023- Present",
+      workdone:
+        "As a Frontend Developer at Ise, I played a pivotal role in designing and implementing user interfaces that seamlessly blend functionality with an exceptional user experience.",
+    },
+  ];
+
   return (
     <Layout>
       <div className={classes.container}>
@@ -22,13 +87,46 @@ const AboutMe = () => {
         </div>
         <div>
           <h4>Skills</h4>
+          <div className={classes.skillsContainer}>
+            {skills.map((data, i) => {
+              return (
+                <div key={i} className={classes.skills}>
+                  <span>
+                    <ProgressBar
+                      percentage={data.progress * 100}
+                      notShowPercentage
+                    />
+                  </span>
+                  <span>{data.title}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div>
           <h3>EDUCATION</h3>
-          <h4>B.Sc in Computer Science</h4>
-          <p>National Open University of Nigeria</p>
-          <p>2015 - 2019</p>
+          <h4>B.Sc in Statistics</h4>
+          <p>University of Lagos</p>
+          <p>2018 - present</p>
+        </div>
+
+        <div>
+          <h4>EXPERIENCE</h4>
+          {experience.map((data, i) => {
+            return (
+              <div key={i} className={classes.experience}>
+                <p>{data.roleAndCompany}</p>
+                <p>{data.timeline}</p>
+                <p>{data.workdone}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className={classes.buttonSection}>
+          <a href="mailto:ezimorahtobenna@gmail.com">
+            <Button>Contact me</Button>
+          </a>
         </div>
       </div>
     </Layout>
