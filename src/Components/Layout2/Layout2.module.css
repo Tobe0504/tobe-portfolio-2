@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.leftSection {
+  width: 74px;
+  color: var(--Main-Color, #fadc4e);
+  font-family: Satoshi;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+}
+
+.leftSection > p {
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 272px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.leftSection > span {
+  width: 44px;
+  height: 44px;
+  background: #fadc4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.leftSection > span > svg {
+  transition: all 0.1s ease-in-out;
+  width: 26px;
+  height: 25px;
+}
+
+.rightSection {
+  flex: 1;
+  background: #fff;
+  overflow-y: auto;
+}

@@ -1,14 +1,26 @@
+import { useNavigate } from "react-router-dom";
+import { scrollToTheTop } from "../../HelperFunctions/scrollToTop";
 import classes from "./WorkCard.module.css";
 
 type WorkCardProps = {
   imageUrl?: string;
   title: string;
   description?: string;
+  slug: string;
 };
 
-const WorkCard = ({ imageUrl, title, description }: WorkCardProps) => {
+const WorkCard = ({ imageUrl, title, description, slug }: WorkCardProps) => {
+  // Router
+  const navigate = useNavigate();
+
   return (
-    <div className={classes.container}>
+    <div
+      className={classes.container}
+      onClick={() => {
+        navigate(`/work/${slug}`);
+        scrollToTheTop();
+      }}
+    >
       <div className={classes.imageSection}>
         <img
           src={

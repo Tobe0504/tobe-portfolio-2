@@ -15,6 +15,7 @@ const Works = () => {
                 title={data.title}
                 description={data.description}
                 imageUrl={data.image}
+                slug={data.slug}
               />
             </React.Fragment>
           );

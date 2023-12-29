@@ -3,6 +3,7 @@ export const works = [
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806109/alphalogo_jry7ck.png",
     title: "Alpha and Jam",
+    slug: "alpha-and-jam",
     description:
       "As the Frontend Developer for the landing page of Alpha and Jam, a dynamic media advertising company, my role involved crafting a captivating online presence that effectively communicated the essence and offerings of the company. The landing page served as an informative gateway, providing visitors with a comprehensive overview of Alpha and Jam's media advertising services, strengths, and unique value propositions. Through strategic design choices, engaging content, and user-friendly navigation, the landing page aimed to leave a lasting impression on potential clients and partners. The emphasis on a visually appealing layout and clear messaging ensured that visitors could easily grasp the company's expertise and offerings, contributing to a positive and impactful online representation for Alpha and Jam",
     url: "https://alphaandjamafrica.com/",
@@ -33,6 +34,7 @@ export const works = [
 
   {
     title: "Your Study Path",
+    slug: "your-study-path",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806342/ysplogo_pzaark.svg",
     description:
@@ -97,6 +99,7 @@ export const works = [
 
   {
     title: "Dukia Gold Precious Metals and Refineries",
+    slug: "dukia-gold",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806418/dukialogo_xl7i9u.png",
     description:
@@ -145,6 +148,7 @@ export const works = [
 
   {
     title: "ScoreNowNow",
+    slug: "scorenownow",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807605/snn_mxodte.svg",
     description:
@@ -192,6 +196,7 @@ export const works = [
 
   {
     title: "SportDm",
+    slug: "sportdm",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807491/sportdmLogo_heuavk.svg",
     description:
@@ -228,6 +233,7 @@ export const works = [
 
   {
     title: "AIESEC in Nigeria",
+    slug: "aiesec-in-nigeria",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
     description:
@@ -259,6 +265,7 @@ export const works = [
 
   {
     title: "AIESEC in Nigeria International Youth Day",
+    slug: "aiesec-international-youth-day",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
     description:
@@ -283,6 +290,7 @@ export const works = [
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807798/eclipselogo_uobvdc.png",
     title: "AIESEC in Lagos Eclipse Dinner",
+    slug: "ail-eclipse-dinner",
     description:
       "As the Frontend Developer for AIESEC in Lagos' online registration project for their annual dinner event, my role was instrumental in transforming the traditional manual registration process into a streamlined and user-friendly online experience. Leveraging my expertise, I crafted an intuitive and visually appealing frontend that not only captured the essence of the dinner event but also facilitated seamless user interaction. The design prioritized simplicity, ensuring easy navigation for users to complete the registration process effortlessly. By implementing responsive design principles, the online registration became accessible across devices, providing attendees with a convenient and efficient way to register for the dinner event. This project showcased my commitment to enhancing user experiences through innovative frontend solutions and contributing to the success of AIESEC in Lagos' events",
     url: "https://ail-eclipse.netlify.app",
@@ -318,6 +326,7 @@ export const works = [
 
   {
     title: "AIESEC in Nigeria National Congress Jos 2024 ",
+    slug: "ain-nc-jos",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
     description:
