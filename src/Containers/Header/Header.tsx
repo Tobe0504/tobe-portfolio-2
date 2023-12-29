@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import classes from "./Header.module.css";
 import memoji from "../../Assets/Images/memoji.svg";
 import SideNav from "../SideNav/SideNav";
@@ -6,8 +6,13 @@ import { useRef } from "react";
 import { navItems } from "../../Utilities/navItems";
 
 const Header = () => {
+  // Router
+  const location = useLocation();
+
+  // Refs
   const sideNavContainer = useRef<HTMLDivElement | null>(null);
 
+  //   Utils
   const openSideNav = () => {
     if (sideNavContainer.current) sideNavContainer.current.style.width = "100%";
   };
@@ -21,7 +26,15 @@ const Header = () => {
       <img src={memoji} alt="Memoji" />
       {navItems.map((data, i) => {
         return (
-          <Link to={data.route} key={i}>
+          <Link
+            to={data.route}
+            key={i}
+            className={
+              location.pathname === data.route
+                ? classes.active
+                : classes.inactive
+            }
+          >
             {data.name}
           </Link>
         );

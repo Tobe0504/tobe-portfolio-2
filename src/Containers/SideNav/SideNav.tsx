@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { navItems } from "../../Utilities/navItems";
 import classes from "./SideNav.module.css";
 
@@ -7,6 +7,9 @@ type SideNavProps = {
 };
 
 const SideNav = ({ closeSideNav }: SideNavProps) => {
+  // Router
+  const location = useLocation();
+
   return (
     <section className={classes.container}>
       <div className={classes.close}>
@@ -29,7 +32,15 @@ const SideNav = ({ closeSideNav }: SideNavProps) => {
       </div>
       {navItems.map((data, i) => {
         return (
-          <Link to={data.route} key={i}>
+          <Link
+            to={data.route}
+            key={i}
+            className={
+              location.pathname === data.route
+                ? classes.active
+                : classes.inactive
+            }
+          >
             {data.name}
           </Link>
         );

@@ -13,7 +13,7 @@ const LandingPage = () => {
         <div className={classes.leftSection}>
           <h4>
             Hola! <br />
-            I’m Tobe, a Nigerian based Frontend Engineer.
+            I’m <span>Tobe</span>, a Nigerian based Frontend Engineer.
           </h4>
           <Button
             onClick={() => {

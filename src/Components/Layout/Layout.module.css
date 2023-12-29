@@ -11,7 +11,8 @@
 }
 
 .body {
-  min-height: calc(100vh - 86px);
+  height: calc(100vh - 86px);
+  overflow-y: auto;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
@@ -20,7 +21,7 @@
   }
 
   .body {
-    min-height: calc(100vh - 76px);
+    height: calc(100vh - 76px);
   }
 }
 
@@ -30,6 +31,6 @@
   }
 
   .body {
-    min-height: calc(100vh - 76px);
+    height: calc(100vh - 76px);
   }
 }

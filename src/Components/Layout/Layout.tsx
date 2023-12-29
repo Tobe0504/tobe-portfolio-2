@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className={classes.header}>
         <Header />
       </div>
-      <div className={classes.boyd}>{children}</div>
+      <div className={classes.body}>{children}</div>
     </div>
   );
 };

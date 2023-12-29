@@ -1,0 +1,137 @@
+.container {
+  height: 600px;
+}
+
+.imageSection {
+  height: 346px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageSection > img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.titleSection {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-family: Satoshi;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  gap: 1rem;
+  border-bottom: 1px solid #fff;
+}
+
+.titleSection > span {
+  width: 44px;
+  height: 44px;
+  background: #fadc4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.titleSection > span > svg {
+  transition: all 0.1s ease-in-out;
+  width: 26px;
+  height: 25px;
+}
+
+.titleSection > span:hover > svg {
+  transform: rotate(45deg);
+}
+
+.description {
+  padding: 1rem 0;
+  color: #fff;
+  font-family: Satoshi;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    height: 400px;
+  }
+
+  .imageSection {
+    height: 200px;
+  }
+
+  .imageSection > img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+  }
+
+  .titleSection {
+    padding: 0.5rem 0;
+    font-size: 20px;
+  }
+
+  .titleSection > span {
+    width: 30px;
+    height: 30px;
+  }
+
+  .titleSection > span > svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .description {
+    padding: 0.5rem 0;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    height: 400px;
+  }
+
+  .imageSection {
+    height: 200px;
+  }
+
+  .imageSection > img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+  }
+
+  .titleSection {
+    padding: 0.5rem 0;
+    font-size: 20px;
+  }
+
+  .titleSection > span {
+    width: 30px;
+    height: 30px;
+  }
+
+  .titleSection > span > svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .description {
+    padding: 0.5rem 0;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
