@@ -4,6 +4,8 @@ export const works = [
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806109/alphalogo_jry7ck.png",
     title: "Alpha and Jam",
     slug: "alpha-and-jam",
+    role: "Frontend Developer",
+    timeline: "1 month",
     description:
       "As the Frontend Developer for the landing page of Alpha and Jam, a dynamic media advertising company, my role involved crafting a captivating online presence that effectively communicated the essence and offerings of the company. The landing page served as an informative gateway, providing visitors with a comprehensive overview of Alpha and Jam's media advertising services, strengths, and unique value propositions. Through strategic design choices, engaging content, and user-friendly navigation, the landing page aimed to leave a lasting impression on potential clients and partners. The emphasis on a visually appealing layout and clear messaging ensured that visitors could easily grasp the company's expertise and offerings, contributing to a positive and impactful online representation for Alpha and Jam",
     url: "https://alphaandjamafrica.com/",
@@ -35,6 +37,8 @@ export const works = [
   {
     title: "Your Study Path",
     slug: "your-study-path",
+    role: "Lead Frontend Developer",
+    timeline: "17 months",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806342/ysplogo_pzaark.svg",
     description:
@@ -99,6 +103,8 @@ export const works = [
 
   {
     title: "Dukia Gold Precious Metals and Refineries",
+    role: "Frontend Developer",
+    timeline: "6 months",
     slug: "dukia-gold",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806418/dukialogo_xl7i9u.png",
@@ -149,6 +155,8 @@ export const works = [
   {
     title: "ScoreNowNow",
     slug: "scorenownow",
+    role: "Lead Frontend Developer",
+    timeline: "12 months",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807605/snn_mxodte.svg",
     description:
@@ -197,6 +205,8 @@ export const works = [
   {
     title: "SportDm",
     slug: "sportdm",
+    role: "Lead Frontend Developer",
+    timeline: "12 months",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807491/sportdmLogo_heuavk.svg",
     description:
@@ -234,6 +244,8 @@ export const works = [
   {
     title: "AIESEC in Nigeria",
     slug: "aiesec-in-nigeria",
+    role: "Frontend Developer",
+    timeline: "3 months",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
     description:
@@ -266,6 +278,8 @@ export const works = [
   {
     title: "AIESEC in Nigeria International Youth Day",
     slug: "aiesec-international-youth-day",
+    role: "Frontend Developer",
+    timeline: "2 weeks",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
     description:
@@ -290,6 +304,8 @@ export const works = [
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807798/eclipselogo_uobvdc.png",
     title: "AIESEC in Lagos Eclipse Dinner",
+    role: "Frontend Developer",
+    timeline: "2 months",
     slug: "ail-eclipse-dinner",
     description:
       "As the Frontend Developer for AIESEC in Lagos' online registration project for their annual dinner event, my role was instrumental in transforming the traditional manual registration process into a streamlined and user-friendly online experience. Leveraging my expertise, I crafted an intuitive and visually appealing frontend that not only captured the essence of the dinner event but also facilitated seamless user interaction. The design prioritized simplicity, ensuring easy navigation for users to complete the registration process effortlessly. By implementing responsive design principles, the online registration became accessible across devices, providing attendees with a convenient and efficient way to register for the dinner event. This project showcased my commitment to enhancing user experiences through innovative frontend solutions and contributing to the success of AIESEC in Lagos' events",
@@ -327,6 +343,8 @@ export const works = [
   {
     title: "AIESEC in Nigeria National Congress Jos 2024 ",
     slug: "ain-nc-jos",
+    role: "Frontend Developer",
+    timeline: "3 weeks",
     image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
     description:

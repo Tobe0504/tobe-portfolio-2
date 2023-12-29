@@ -1,0 +1,105 @@
+.container {
+  padding: 100px 104px;
+}
+
+.container > h4 {
+  color: #0f0c13;
+  font-family: Satoshi;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 93px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: capitalize;
+}
+
+.header > img {
+  width: 80px;
+  height: 80px;
+}
+
+.descriptionContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 1rem 0;
+}
+
+.descriptionContainer > div {
+  position: relative;
+}
+
+.descriptionContainer > div:nth-child(1) {
+  width: 250px;
+}
+
+.descriptionContainer > div > h4 {
+  font-family: Satoshi;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.153px;
+  color: rgb(180, 178, 178);
+  position: relative;
+}
+
+.descriptionContainer > div > h4 > span:nth-child(2) {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 245, 68, 0) -8.43%,
+    rgba(228, 62, 255, 0) 55.17%,
+    rgba(237, 237, 237, 1) 78.66%
+  );
+}
+
+.descriptionContainer > div > p {
+  position: absolute;
+  left: 17px;
+  bottom: 22px;
+  color: #0f0c13;
+  font-family: Satoshi;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.153px;
+}
+
+.imageSection {
+  border-radius: 8px;
+  height: 538px;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.imageSection > div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0f0c13;
+  border-radius: 8px;
+}
+
+.imageSection > img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  border-radius: 8px;
+}
