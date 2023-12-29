@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tobe-portfolio-2/static/css/main.00b33620.css",
-    "main.js": "/tobe-portfolio-2/static/js/main.5b6d696e.js",
+    "main.js": "/tobe-portfolio-2/static/js/main.1451c18a.js",
     "static/js/787.efa3bdb7.chunk.js": "/tobe-portfolio-2/static/js/787.efa3bdb7.chunk.js",
     "static/media/Kastelov - Axiforma Bold.otf": "/tobe-portfolio-2/static/media/Kastelov - Axiforma Bold.4a328a7114209c6ce850.otf",
     "static/media/memoji.svg": "/tobe-portfolio-2/static/media/memoji.1b462a289e55dc4330f2d6b3523cc459.svg",
     "index.html": "/tobe-portfolio-2/index.html",
     "main.00b33620.css.map": "/tobe-portfolio-2/static/css/main.00b33620.css.map",
-    "main.5b6d696e.js.map": "/tobe-portfolio-2/static/js/main.5b6d696e.js.map",
+    "main.1451c18a.js.map": "/tobe-portfolio-2/static/js/main.1451c18a.js.map",
     "787.efa3bdb7.chunk.js.map": "/tobe-portfolio-2/static/js/787.efa3bdb7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00b33620.css",
-    "static/js/main.5b6d696e.js"
+    "static/js/main.1451c18a.js"
   ]
 }
