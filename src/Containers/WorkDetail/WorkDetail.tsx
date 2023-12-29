@@ -66,7 +66,10 @@ const WorkDetail = () => {
           </svg>
           <div>
             <a href={activeWork.url} target="_blank" rel="noreferrer">
-              Pay this site a visit
+              Visit{" "}
+              {activeWork.title.length > 14
+                ? `${activeWork.title.slice(0, 14)}...`
+                : activeWork.title}
             </a>
             <span className={classes.visit2}>
               <svg

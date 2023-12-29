@@ -47,7 +47,7 @@ const LandingPage = () => {
         >
           <h4>
             Hola! <br />
-            I’m <span>Tobe</span>, a Nigerian based Frontend Engineer.
+            I’m <span>Tobe</span>, a Nigerian based Frontend Developer.
           </h4>
           <Button
             onClick={() => {

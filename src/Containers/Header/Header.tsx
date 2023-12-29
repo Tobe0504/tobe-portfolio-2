@@ -4,6 +4,7 @@ import memoji from "../../Assets/Images/memoji.svg";
 import SideNav from "../SideNav/SideNav";
 import { useRef } from "react";
 import { navItems } from "../../Utilities/navItems";
+import Button from "../../Components/Button/Button";
 
 const Header = () => {
   // Router
@@ -46,6 +47,11 @@ const Header = () => {
           </Link>
         );
       })}
+      <div className={classes.buttonSection}>
+        <a href="mailto:ezimorahtobenna@gmail.com">
+          <Button>Contact me</Button>
+        </a>
+      </div>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -3,6 +3,25 @@ import classes from "./AboutMe.module.css";
 import mempji from "../../Assets/Images/memoji.svg";
 import ProgressBar from "../../Components/ProgressBar/ProgressBar";
 import Button from "../../Components/Button/Button";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5, delayChildren: 0.3, staggerChildren: 0.2 },
+  },
+};
+
+const meVariants = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const AboutMe = () => {
   const skills = [
@@ -70,8 +89,13 @@ const AboutMe = () => {
 
   return (
     <Layout>
-      <div className={classes.container}>
-        <div>
+      <motion.div
+        className={classes.container}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={meVariants}>
           <img src={mempji} alt="Ezimorah Tobenna" />
           <h4>Ezimorah Tobenna</h4>
           <p>
@@ -84,8 +108,8 @@ const AboutMe = () => {
             intuitive interfaces, and a commitment to enhancing the digital
             landscape.
           </p>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div variants={meVariants}>
           <h4>Skills</h4>
           <div className={classes.skillsContainer}>
             {skills.map((data, i) => {
@@ -101,17 +125,25 @@ const AboutMe = () => {
                 </div>
               );
             })}
+            <a
+              href="https://drive.google.com/file/d/1wbmOxPK_EegHptGMhU_Jg3FkW5GqOn5g/view"
+              target="_blank"
+              rel="noreferrer"
+              className={classes.resume}
+            >
+              View Resume
+            </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={meVariants}>
           <h3>EDUCATION</h3>
           <h4>B.Sc in Statistics</h4>
           <p>University of Lagos</p>
           <p>2018 - present</p>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={meVariants}>
           <h4>EXPERIENCE</h4>
           {experience.map((data, i) => {
             return (
@@ -122,13 +154,13 @@ const AboutMe = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
         <div className={classes.buttonSection}>
           <a href="mailto:ezimorahtobenna@gmail.com">
             <Button>Contact me</Button>
           </a>
         </div>
-      </div>
+      </motion.div>
     </Layout>
   );
 };
