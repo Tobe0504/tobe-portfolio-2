@@ -45,9 +45,15 @@ const LandingPage = () => {
           className={classes.leftSection}
           variants={containerVaraiants}
         >
-          <h4>
+          {/* <h4>
             Hola! <br />
             I’m <span>Tobe</span>, a Nigerian based Frontend Developer.
+          </h4> */}
+
+          <h4>
+            Hola!
+            <br /> I'm <span>Tobe</span>, the digital artisan sculpting seamless
+            frontend experiences
           </h4>
           <Button
             onClick={() => {
