@@ -32,6 +32,12 @@ export const works = [
       "Lack of Information Accessibility",
       "Outdated Design and Branding",
     ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853249/Screenshot_2023-12-29_at_13.32.38_ae3xej.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853290/Screenshot_2023-12-29_at_13.32.58_dblh7i.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853277/Screenshot_2023-12-29_at_13.33.14_sbjx2n.png",
+    ],
+    live: false,
   },
 
   {
@@ -99,6 +105,12 @@ export const works = [
           "Committed to continuous learning and skill development, staying updated with the latest technologies and best practices in frontend development to bring cutting-edge solutions to the platform",
       },
     ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853062/Screenshot_2023-12-29_at_13.30.13_uazncv.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853062/Screenshot_2023-12-29_at_13.29.15_b7mign.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853061/Screenshot_2023-12-29_at_13.29.26_wr1ij9.png",
+    ],
+    live: true,
   },
 
   {
@@ -150,6 +162,12 @@ export const works = [
           "Accomplished a user-centric approach through the incorporation of features for user feedback. This iterative development process allowed for continuous refinement and enhancement of the platform based on user suggestions and preferences, ensuring the platform resonates with the user community.",
       },
     ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853680/Screenshot_2023-12-29_at_13.40.08_c98j4g.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853685/Screenshot_2023-12-29_at_13.40.36_y1igpu.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853685/Screenshot_2023-12-29_at_13.40.20_mm1cxp.png",
+    ],
+    live: true,
   },
 
   {
@@ -200,6 +218,12 @@ export const works = [
       "Limited Historical Data Exploration",
       "Fragmented Team and Player Information",
     ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853963/Screenshot_2023-12-29_at_13.45.13_aqzgjl.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853964/Screenshot_2023-12-29_at_13.43.05_dljitm.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853967/Screenshot_2023-12-29_at_13.44.18_gdtvrh.png",
+    ],
+    live: true,
   },
 
   {
@@ -239,6 +263,12 @@ export const works = [
       "Information Overload",
       "Lack of Real-Time Updates",
     ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854323/Screenshot_2023-12-29_at_13.50.33_bmoot5.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854323/Screenshot_2023-12-29_at_13.51.21_d6zbr1.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854325/Screenshot_2023-12-29_at_13.50.51_cyj7qx.png",
+    ],
+    live: true,
   },
 
   {
@@ -273,6 +303,12 @@ export const works = [
       "Inconsistent Branding",
       "Limited Interactivity",
     ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854580/Screenshot_2023-12-29_at_13.53.11_xpc792.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854546/Screenshot_2023-12-29_at_13.53.43_a0koum.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854586/Screenshot_2023-12-29_at_13.53.59_xjmijj.png",
+    ],
+    live: true,
   },
 
   {
@@ -298,6 +334,12 @@ export const works = [
       },
     ],
     problem: ["Limited Social Media Sharing", "User Engagement Challenges"],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854760/Screenshot_2023-12-29_at_13.58.19_tsmrqc.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854762/Screenshot_2023-12-29_at_13.58.45_nq34r8.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854761/Screenshot_2023-12-29_at_13.58.27_ota8yp.png",
+    ],
+    live: true,
   },
 
   {
@@ -338,6 +380,13 @@ export const works = [
       "Real-Time Confirmation and Feedback",
       "Promotion and Engagement",
     ],
+
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854912/Screenshot_2023-12-29_at_14.00.29_v94t8w.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854914/Screenshot_2023-12-29_at_14.00.55_pnh5iu.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854912/Screenshot_2023-12-29_at_14.01.14_migbt0.png",
+    ],
+    live: true,
   },
 
   {
@@ -378,5 +427,11 @@ export const works = [
       "Real-Time Confirmation and Feedback",
       "Promotion and Engagement",
     ],
+
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703855011/Screenshot_2023-12-29_at_14.02.47_pcrf0k.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703855014/Screenshot_2023-12-29_at_14.03.02_whfxl3.png",
+    ],
+    live: true,
   },
 ];

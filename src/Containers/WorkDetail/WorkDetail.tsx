@@ -7,6 +7,19 @@ import WorkDetailFeatures from "../WorkDetailFeatures/WorkDetailFeatures";
 import WorkDetailHeader from "../WorkDetailHeader.tsx/WorkDetailHeader";
 import WorkDetailProblem from "../WorkDetailProblem/WorkDetailProblem";
 import classes from "./WorkDetail.module.css";
+import { motion } from "framer-motion";
+
+const containerVaraiants = {
+  hidden: {
+    y: "30vh",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { delay: 1, duration: 0.7 },
+  },
+};
 
 const WorkDetail = () => {
   // Router
@@ -16,7 +29,12 @@ const WorkDetail = () => {
   const activeWork: any = works.find((data) => data.slug === workSlug);
   return (
     <Layout2>
-      <section className={classes.container}>
+      <motion.section
+        className={classes.container}
+        variants={containerVaraiants}
+        initial="hidden"
+        animate="visible"
+      >
         <WorkDetailHeader
           name={activeWork?.title}
           role={activeWork?.role}
@@ -31,46 +49,41 @@ const WorkDetail = () => {
         )}
 
         <div className={classes.visit}>
-          {
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 25 25"
-              fill="none"
-            >
-              <path
-                d="M6.14126 6.66406L18.3369 18.8597M16.3043 6.66406H6.14126V16.8271"
-                stroke="#0F0C13"
-                strokeWidth="2.74637"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          }
-
-          {
-            <div>
-              <a href={activeWork.url} target="_blank" rel="noreferrer">
-                Pay this site a visit
-              </a>
-              <span className={classes.visit2}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                >
-                  <path
-                    d="M6.14126 6.66406L18.3369 18.8597M16.3043 6.66406H6.14126V16.8271"
-                    stroke="#0F0C13"
-                    strokeWidth="2.74637"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </div>
-          }
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 25 25"
+            fill="none"
+          >
+            <path
+              d="M6.14126 6.66406L18.3369 18.8597M16.3043 6.66406H6.14126V16.8271"
+              stroke="#0F0C13"
+              strokeWidth="2.74637"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <div>
+            <a href={activeWork.url} target="_blank" rel="noreferrer">
+              Pay this site a visit
+            </a>
+            <span className={classes.visit2}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M6.14126 6.66406L18.3369 18.8597M16.3043 6.66406H6.14126V16.8271"
+                  stroke="#0F0C13"
+                  strokeWidth="2.74637"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
         </div>
-      </section>
+      </motion.section>
     </Layout2>
   );
 };
