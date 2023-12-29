@@ -26,3 +26,17 @@
     width: 47%;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 32px 16px;
+    gap: 3rem;
+    min-height: calc(100vh - 86px);
+    align-items: center;
+  }
+
+  .container > div {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}

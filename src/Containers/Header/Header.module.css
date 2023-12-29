@@ -11,6 +11,7 @@
 .container > img {
   height: 86px;
   width: 86px;
+  cursor: pointer;
 }
 
 .container > a:nth-child(2) {

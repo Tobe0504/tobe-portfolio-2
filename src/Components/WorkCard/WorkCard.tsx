@@ -7,9 +7,16 @@ type WorkCardProps = {
   title: string;
   description?: string;
   slug: string;
+  achievement: any[] | undefined;
 };
 
-const WorkCard = ({ imageUrl, title, description, slug }: WorkCardProps) => {
+const WorkCard = ({
+  imageUrl,
+  title,
+  description,
+  slug,
+  achievement,
+}: WorkCardProps) => {
   // Router
   const navigate = useNavigate();
 
@@ -33,7 +40,10 @@ const WorkCard = ({ imageUrl, title, description, slug }: WorkCardProps) => {
 
       <div className={classes.textSection}>
         <div className={classes.titleSection}>
-          <p>{title.length > 25 ? `${title?.slice(0, 25)}...` : title}</p>
+          <p>
+            {title.length > 25 ? `${title?.slice(0, 25)}...` : title}{" "}
+            {achievement && <span>🏆</span>}
+          </p>
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

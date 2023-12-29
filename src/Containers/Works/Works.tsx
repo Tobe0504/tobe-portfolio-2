@@ -3,24 +3,49 @@ import Layout from "../../Components/Layout/Layout";
 import WorkCard from "../../Components/WorkCard/WorkCard";
 import { works } from "../../Utilities/works";
 import classes from "./Works.module.css";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5, delayChildren: 0.3, staggerChildren: 0.2 },
+  },
+};
+
+const workVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Works = () => {
   return (
     <Layout>
-      <section className={classes.container}>
+      <motion.section
+        className={classes.container}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {works.map((data, i) => {
           return (
-            <React.Fragment key={i}>
+            <motion.div variants={workVariants} key={i}>
               <WorkCard
                 title={data.title}
                 description={data.description}
                 imageUrl={data.image}
                 slug={data.slug}
+                achievement={data?.achievements}
               />
-            </React.Fragment>
+            </motion.div>
           );
         })}
-      </section>
+      </motion.section>
     </Layout>
   );
 };

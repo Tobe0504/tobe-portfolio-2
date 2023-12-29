@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./Header.module.css";
 import memoji from "../../Assets/Images/memoji.svg";
 import SideNav from "../SideNav/SideNav";
@@ -8,6 +8,7 @@ import { navItems } from "../../Utilities/navItems";
 const Header = () => {
   // Router
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Refs
   const sideNavContainer = useRef<HTMLDivElement | null>(null);
@@ -23,7 +24,13 @@ const Header = () => {
 
   return (
     <div className={classes.container}>
-      <img src={memoji} alt="Memoji" />
+      <img
+        src={memoji}
+        alt="Memoji"
+        onClick={() => {
+          navigate("/");
+        }}
+      />
       {navItems.map((data, i) => {
         return (
           <Link
