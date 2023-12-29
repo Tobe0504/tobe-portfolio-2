@@ -8,6 +8,7 @@ import WorkDetailHeader from "../WorkDetailHeader.tsx/WorkDetailHeader";
 import WorkDetailProblem from "../WorkDetailProblem/WorkDetailProblem";
 import classes from "./WorkDetail.module.css";
 import { motion } from "framer-motion";
+import WorkDetailsPictures from "../WorkDetailsPictures/WorkDetailsPictures";
 
 const containerVaraiants = {
   hidden: {
@@ -47,6 +48,7 @@ const WorkDetail = () => {
         {activeWork.achievements && (
           <WorkDetailAchievements achievements={activeWork.achievements} />
         )}
+        <WorkDetailsPictures images={activeWork.images} />
 
         <div className={classes.visit}>
           <svg
