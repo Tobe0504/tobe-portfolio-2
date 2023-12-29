@@ -1,16 +1,23 @@
+@font-face {
+  font-family: Axiforma;
+  src: url("/src//Assets/Fonts/Kastelov\ -\ Axiforma\ Bold.otf");
+  font-weight: 800;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: "Satoshi", sans-serif, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Satoshi", Axiforma, sans-serif, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #000;
 }
 
 code {
-  font-family: "Satoshi", sans-serif, source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
+  font-family: "Satoshi", Axiforma, sans-serif, source-code-pro, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
 }
 
 * {

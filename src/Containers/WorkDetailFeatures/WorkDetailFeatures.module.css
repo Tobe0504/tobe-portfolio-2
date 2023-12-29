@@ -1,0 +1,136 @@
+.container {
+  padding: 100px 104px;
+  position: relative;
+}
+
+.container > h4 {
+  color: rgba(180, 178, 178, 0.2);
+  text-align: center;
+  font-family: Axiforma;
+  font-size: 308px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 7.153px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 0;
+}
+
+.container > ol {
+  width: 70%;
+  margin: auto;
+}
+
+.container > h5 {
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.153px;
+  text-transform: capitalize;
+  width: 70%;
+  margin: 5rem auto 1rem auto;
+}
+
+.container > ol > li > h6 {
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.153px;
+  text-transform: capitalize;
+}
+
+.container > ol > li > p {
+  color: #0f0c13;
+  font-family: Satoshi;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.153px;
+}
+
+.container > ol > li {
+  margin: auto auto 1.5rem -20px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container {
+    padding: 32px 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .container > h4 {
+    color: rgba(180, 178, 178, 0.2);
+    font-size: 198px;
+    letter-spacing: 4.153px;
+  }
+
+  .container > h5,
+  .container > ol > li > h6 {
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+    margin: 3rem auto 1rem auto;
+  }
+
+  .container > ol {
+    width: 100%;
+  }
+
+  .container > ol > li > p {
+    font-size: 14px;
+    line-height: 170%;
+    letter-spacing: 0.053px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 32px 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .container > h4 {
+    color: rgba(180, 178, 178, 0.2);
+    font-size: 198px;
+    letter-spacing: 4.153px;
+  }
+
+  .container > h5 {
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+    margin: 3rem auto 1rem auto;
+  }
+
+  .container > ol > li > h6 {
+    font-size: 20px;
+    line-height: 24px;
+    width: 100%;
+  }
+
+  .container > ol {
+    width: 100%;
+  }
+
+  .container > ol > li {
+    margin: auto auto 2rem -20px;
+  }
+
+  .container > ol > li > p {
+    font-size: 14px;
+    line-height: 170%;
+    letter-spacing: 0.053px;
+  }
+}

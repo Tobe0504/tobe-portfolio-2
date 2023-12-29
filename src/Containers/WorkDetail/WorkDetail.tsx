@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import Layout2 from "../../Components/Layout2/Layout2";
 import { works } from "../../Utilities/works";
+import WorkDetaiDescription from "../WorkDetaiDescription/WorkDetaiDescription";
+import WorkDetailFeatures from "../WorkDetailFeatures/WorkDetailFeatures";
 import WorkDetailHeader from "../WorkDetailHeader.tsx/WorkDetailHeader";
+import WorkDetailProblem from "../WorkDetailProblem/WorkDetailProblem";
 import classes from "./WorkDetail.module.css";
 
 const WorkDetail = () => {
@@ -19,6 +22,10 @@ const WorkDetail = () => {
           timeline={activeWork?.timeline}
           image={activeWork.image}
         />
+
+        <WorkDetaiDescription description={activeWork.description} />
+        <WorkDetailProblem problems={activeWork.problem} />
+        <WorkDetailFeatures features={activeWork.features} />
       </section>
     </Layout2>
   );
