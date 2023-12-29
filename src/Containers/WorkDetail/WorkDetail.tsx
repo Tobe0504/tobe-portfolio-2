@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Layout2 from "../../Components/Layout2/Layout2";
 import { works } from "../../Utilities/works";
 import WorkDetaiDescription from "../WorkDetaiDescription/WorkDetaiDescription";
+import WorkDetailAchievements from "../WorkDetailAchievements/WorkDetailAchievements";
 import WorkDetailFeatures from "../WorkDetailFeatures/WorkDetailFeatures";
 import WorkDetailHeader from "../WorkDetailHeader.tsx/WorkDetailHeader";
 import WorkDetailProblem from "../WorkDetailProblem/WorkDetailProblem";
@@ -26,6 +27,9 @@ const WorkDetail = () => {
         <WorkDetaiDescription description={activeWork.description} />
         <WorkDetailProblem problems={activeWork.problem} />
         <WorkDetailFeatures features={activeWork.features} />
+        {activeWork.achievements && (
+          <WorkDetailAchievements achievements={activeWork.achievements} />
+        )}
       </section>
     </Layout2>
   );

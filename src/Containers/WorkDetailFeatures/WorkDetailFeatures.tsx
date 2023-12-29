@@ -8,7 +8,7 @@ const WorkDetailFeatures = ({ features }: WorkDetailFeaturesProps) => {
   return (
     <section className={classes.container}>
       <h4>Features</h4>
-      <h5>...</h5>
+      <h5>🧸</h5>
       <ol>
         {features.map((data: any, i: number) => {
           return (
