@@ -3,6 +3,7 @@ import Button from "../../Components/Button/Button";
 import Layout from "../../Components/Layout/Layout";
 import classes from "./LandingPage.module.css";
 import { motion } from "framer-motion";
+import Image from "../../Components/Image/Image";
 
 const containerVaraiants = {
   hidden: {
@@ -68,7 +69,8 @@ const LandingPage = () => {
         >
           <div></div>
           <div></div>
-          <img
+          <div></div>
+          <Image
             src="https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703779700/IMG_2084_f1xr3u.jpg"
             alt="Ezimorah Tobenna"
           />

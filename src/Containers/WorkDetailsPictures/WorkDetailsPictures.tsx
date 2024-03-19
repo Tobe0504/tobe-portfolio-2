@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Image from "../../Components/Image/Image";
 import { activeToggler } from "../../HelperFunctions/activeTogglers";
 import classes from "./WorkDetailsPictures.module.css";
 
@@ -44,14 +45,14 @@ const WorkDetailsPictures = ({ images }: WorkDetailsPicturesProps) => {
       <h5>📸</h5>
       {imagesState.map((data) => {
         return (
-          <img
+          <div
             key={data.image}
-            src={data.image}
-            alt="Website"
             className={
               data.isActive ? classes.activeImage : classes.inactiveImage
             }
-          />
+          >
+            <Image src={data.image} alt="Website" />
+          </div>
         );
       })}
 

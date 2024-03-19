@@ -30,7 +30,7 @@
   height: 100%;
 }
 
-.imageSection > img {
+.imageSection > div > img {
   object-fit: cover;
   height: 100%;
   width: 100%;
