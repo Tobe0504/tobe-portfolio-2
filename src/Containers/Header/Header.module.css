@@ -71,6 +71,10 @@
   .container > svg {
     display: block;
   }
+
+  .buttonSection {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -90,5 +94,8 @@
 
   .container > svg {
     display: block;
+  }
+  .buttonSection {
+    display: none;
   }
 }

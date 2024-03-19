@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import Button from "../../Components/Button/Button";
 import { navItems } from "../../Utilities/navItems";
 import classes from "./SideNav.module.css";
 
@@ -45,6 +46,12 @@ const SideNav = ({ closeSideNav }: SideNavProps) => {
           </Link>
         );
       })}
+
+      <div className={classes.buttonSection}>
+        <a href="mailto:ezimorahtobenna@gmail.com">
+          <Button>Contact me</Button>
+        </a>
+      </div>
     </section>
   );
 };

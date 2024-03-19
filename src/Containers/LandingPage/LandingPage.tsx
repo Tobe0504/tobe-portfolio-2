@@ -52,8 +52,7 @@ const LandingPage = () => {
 
           <h4>
             Hola!
-            <br /> I'm <span>Tobe</span>, the digital artisan sculpting seamless
-            frontend experiences
+            <br /> I'm <span>Tobe</span>, Welcome to my frontend showcase
           </h4>
           <Button
             onClick={() => {
