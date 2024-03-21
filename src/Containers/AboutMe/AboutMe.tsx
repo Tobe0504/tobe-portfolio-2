@@ -27,11 +27,11 @@ const AboutMe = () => {
   const skills = [
     {
       title: "HTML",
-      progress: 0.9,
+      progress: 1,
     },
     {
       title: "CSS",
-      progress: 0.8,
+      progress: 0.9,
     },
     {
       title: "ReactJs",
@@ -47,7 +47,7 @@ const AboutMe = () => {
     },
     {
       title: "VueJs",
-      progress: 0.6,
+      progress: 0.7,
     },
   ];
 
