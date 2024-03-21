@@ -75,15 +75,22 @@ const AboutMe = () => {
     {
       roleAndCompany:
         "Frontend Developer | Dukia Gold Precious Metals and Refineries",
-      timeline: "July 20223- October 2023",
+      timeline: "July 2023- October 2023",
       workdone:
         "As a Frontend Developer at Dukia Gold Precious Metals and Refineries, I was part of the development of a forward-thinking fintech platform, revolutionizing the way users buy and sell gold from their phones. Taking charge of the frontend components, I ensured the creation of an intuitive, visually appealing interface for seamless transactions. Collaborating with cross-functional teams, I integrated secure payment gateways and real-time updates, enhancing transparency in gold transactions.",
     },
+
     {
-      roleAndCompany: "Lead Frontend Developer | Ise",
+      roleAndCompany: "Frontend Developer | Proptask (Contribution)",
+      timeline: "July 2023- Present",
+      workdone:
+        "As a Frontend Developer at Proptask, I was part of the development of a forward-thinking property tech platform, revolutionizing the way users buy and sell properties internationally from their phones. Taking charge of the frontend components in VueJs, I ensured the creation of an intuitive, visually appealing interface for seamless transactions.",
+    },
+    {
+      roleAndCompany: "Tech Lead | Iśè",
       timeline: "October 2023- Present",
       workdone:
-        "As a Frontend Developer at Ise, I played a pivotal role in designing and implementing user interfaces that seamlessly blend functionality with an exceptional user experience.",
+        "As a Frontend Developer and tech lead at Iśè, I played a pivotal role in designing and implementing user interfaces that seamlessly blend functionality with an exceptional user experience.",
     },
   ];
 
