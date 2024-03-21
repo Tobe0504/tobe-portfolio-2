@@ -52,16 +52,30 @@ const LandingPage = () => {
           </h4> */}
 
           <h4>
-            Hola!
+            Hey!
             <br /> I'm <span>Tobe</span>, Welcome to my frontend showcase
           </h4>
-          <Button
-            onClick={() => {
-              navigate("/work");
-            }}
-          >
-            My works
-          </Button>
+
+          <div className={classes.buttonSection}>
+            <Button
+              onClick={() => {
+                navigate("/work");
+              }}
+            >
+              My works
+            </Button>
+
+            <Button
+              onClick={() => {
+                window.open(
+                  "https://drive.google.com/file/d/15z3rACnsoZNlryX4jk46wuzf5J8BeSMQ/view?usp=sharing"
+                );
+              }}
+              type="secondary"
+            >
+              View portfolio
+            </Button>
+          </div>
         </motion.div>
         <motion.div
           className={classes.imageSection}

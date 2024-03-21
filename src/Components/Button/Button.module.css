@@ -17,6 +17,12 @@
   background: #444122;
 }
 
+.secondary {
+  border: 1px solid #fceb4f;
+  color: #fceb4f;
+  background: transparent;
+}
+
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   .button {
     font-size: 14px;

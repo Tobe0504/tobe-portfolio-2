@@ -30,15 +30,14 @@
   height: 100%;
 }
 
-.imageSection > div > img {
+.imageSection > div:last-child > img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
 
-.imageSection > div {
+.imageSection > div:not(.imageSection > div:last-child) {
   position: absolute;
-  /* border: 2px solid red; */
 }
 
 .imageSection > div:nth-child(1) {
@@ -62,6 +61,12 @@
     rgba(0, 0, 0, 1) 100%
   );
   right: 0;
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
