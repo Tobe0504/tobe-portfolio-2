@@ -133,7 +133,7 @@ const AboutMe = () => {
               );
             })}
             <a
-              href="https://drive.google.com/file/d/1wbmOxPK_EegHptGMhU_Jg3FkW5GqOn5g/view"
+              href="https://drive.google.com/file/d/1DM46TByabPkN3zL7M8yThJbfO6tMMQ_V/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className={classes.resume}
