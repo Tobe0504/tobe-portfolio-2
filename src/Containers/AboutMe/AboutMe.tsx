@@ -87,7 +87,7 @@ const AboutMe = () => {
         "As a Frontend Developer at Proptask, I was part of the development of a forward-thinking property tech platform, revolutionizing the way users buy and sell properties internationally from their phones. Taking charge of the frontend components in VueJs, I ensured the creation of an intuitive, visually appealing interface for seamless transactions.",
     },
     {
-      roleAndCompany: "Tech Lead | Iśè",
+      roleAndCompany: "Frontend Developer | iśè",
       timeline: "October 2023- Present",
       workdone:
         "As a Frontend Developer and tech lead at Iśè, I played a pivotal role in designing and implementing user interfaces that seamlessly blend functionality with an exceptional user experience.",

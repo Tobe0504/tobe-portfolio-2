@@ -19,11 +19,12 @@
     gap: 3rem;
     min-height: calc(100vh - 86px);
     align-items: center;
+    justify-content: center;
   }
 
   .container > div {
-    flex-basis: 47%;
-    width: 47%;
+    flex-basis: 40%;
+    width: 40%;
   }
 }
 

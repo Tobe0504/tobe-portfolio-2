@@ -41,7 +41,7 @@ const WorkCard = ({
       <div className={classes.textSection}>
         <div className={classes.titleSection}>
           <p>
-            {title.length > 25 ? `${title?.slice(0, 25)}...` : title}{" "}
+            <span>{title}</span>
             {achievement && <span>🏆</span>}
           </p>
           <span>

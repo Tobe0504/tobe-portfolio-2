@@ -1,6 +1,75 @@
 export const works = [
   {
     image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461616/iseLogoWhite_lp9imp.svg",
+    title: "iṣẹ́ School",
+    slug: "ise-school",
+    role: "Frontend Developer",
+    timeline: "5 months",
+    description:
+      "As a frontend developer at iṣẹ́ School, I contributed to the development of innovative and user-friendly interfaces for our educational technology platform. I collaborated with cross-functional teams to translate design concepts into responsive and visually appealing web applications, enhancing the overall user experience. My responsibilities included implementing frontend functionalities, optimizing performance, and ensuring compatibility across various devices and browsers to provide seamless access to educational resources for our users",
+    url: "https://iseschool.co/",
+    features: [
+      {
+        name: "Recorded Classes:",
+        description:
+          "Students could access previously recorded classes, allowing them to review course material at their own pace or catch up on missed lectures",
+      },
+      {
+        name: "Quizzes:",
+        description:
+          "The platform offered interactive quizzes to assess students' understanding of course topics and track their progress",
+      },
+      {
+        name: "Resources",
+        description:
+          "A repository of educational materials, including lecture notes, study guides, and supplementary resources, provided students with additional support for their studies",
+      },
+      {
+        name: "Tutor Support",
+        description:
+          "Students had access to tutoring services, enabling them to seek assistance from qualified tutors for personalized academic guidance and clarification on complex topic",
+      },
+      {
+        name: "Collaboration Hub",
+        description:
+          "The collaboration hub facilitated communication and collaboration among students, teachers, and peers, fostering a dynamic learning environment through discussions, group projects, and shared resources.",
+      },
+
+      {
+        name: "Referrals",
+        description:
+          "The referral feature allowed students to refer friends or colleagues to the platform, potentially earning rewards or incentives for successful referrals and contributing to the growth of the user community.",
+      },
+    ],
+    problem: [
+      "Limited Showcase of Success Stories",
+      "Alpha and Jam might have had limited online visibility, hindering their ability to reach a broader audience and potential clients",
+      "Lack of Information Accessibility",
+      "Outdated Design and Branding",
+    ],
+    achievements: [
+      {
+        name: "Problem Solver for 2023",
+        description: "I won the problem solver for 2023",
+      },
+
+      {
+        name: "Zen master (Engineering)",
+        description: "I won the best tech team member for 2023",
+      },
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461466/Screenshot_2024-04-07_at_04.42.38_kma66k.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461471/Screenshot_2024-04-07_at_04.42.55_ucrbv8.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461479/Screenshot_2024-04-07_at_04.43.28_jgdn0m.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461459/Screenshot_2024-04-07_at_04.43.12_rqin9r.png",
+    ],
+    live: false,
+  },
+
+  {
+    image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806109/alphalogo_jry7ck.png",
     title: "Alpha and Jam",
     slug: "alpha-and-jam",
@@ -38,79 +107,6 @@ export const works = [
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853277/Screenshot_2023-12-29_at_13.33.14_sbjx2n.png",
     ],
     live: false,
-  },
-
-  {
-    title: "Your Study Path",
-    slug: "your-study-path",
-    role: "Lead Frontend Developer",
-    timeline: "17 months",
-    image:
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806342/ysplogo_pzaark.svg",
-    description:
-      "As the Lead Frontend Developer at Your Study Path, I spearheaded the development of an innovative EdTech platform using ReactJS. In this pivotal role, I played a key part in crafting a dynamic and user-friendly interface for the platform, ensuring an optimal user experience for students and educators alike",
-    url: "https://yourstudypath.com",
-    features: [
-      {
-        name: "Mock Exam",
-        description:
-          "Implemented a robust mock exam feature that provided students with a realistic simulation of exam scenarios. This feature allowed students to practice and assess their knowledge in a controlled environment, helping them prepare effectively for actual exams",
-      },
-      {
-        name: "Educational Resources Repository",
-        description:
-          "Developed a comprehensive repository for educational resources, including notes and materials. This centralized hub facilitated easy access to learning materials, enhancing the overall learning experience for students by providing organized and readily available resources.",
-      },
-      {
-        name: "Class Scheduling System",
-        description:
-          "Orchestrated a user-friendly class scheduling system that enabled seamless coordination between students and tutors. This feature allowed users to schedule and manage their classes efficiently, ensuring a structured and organized approach to their learning journey",
-      },
-      {
-        name: "Recorded Video Courses",
-        description:
-          "Integrated a recorded video feature that enabled students to access pre-recorded courses at their own pace. This on-demand learning feature provided flexibility, allowing students to review course content at their convenience and reinforcing key concepts",
-      },
-      {
-        name: "Live Video Classes",
-        description:
-          "Implemented live video classes, creating an interactive and engaging learning environment. This real-time feature allowed students to participate in live sessions, interact with tutors, and collaborate with peers, fostering a sense of community and enhancing the overall learning experience",
-      },
-    ],
-    problem: [
-      "In my capacity as Lead Frontend Developer at Your Study Path, my foremost initiative was to elevate the user experience and interface of the EdTech platform. Utilizing ReactJS, I led a comprehensive redesign that not only enhanced the platform's aesthetics but also greatly improved navigation, accessibility, and overall visual appeal. This transformative effort culminated in a more engaging and satisfying experience for both students and educators.",
-      "Addressing a critical need for effective exam preparation, I directed the development and integration of a robust mock exam feature. This addition provided students with a realistic simulation of exam scenarios, offering a valuable tool for self-assessment and boosting confidence. Simultaneously, I recognized the challenge of scattered educational resources and responded by creating a centralized repository for notes and materials. This strategic move streamlined access to study materials, offering a unified platform that significantly improved the efficiency of the learning experience.",
-      "Furthermore, my role involved solving coordination challenges within the platform. I orchestrated the implementation of a user-friendly class scheduling system, providing an organized approach to class coordination between students and tutors. Additionally, I catered to diverse learning preferences by introducing both recorded and live video functionalities. This flexibility empowered students to engage with course content at their own pace or participate in real-time sessions, thereby accommodating a spectrum of learning styles. Through these initiatives, I not only optimized the platform's performance but also fostered a collaborative and enriched educational environment at Your Study Path.",
-    ],
-    achievements: [
-      {
-        name: "Staff of the Quarter Recognition",
-        description:
-          "Acknowledged as the Staff of the Quarter for outstanding contributions to the company. This recognition reflects a consistent commitment to excellence and significant impact on project success",
-      },
-      {
-        name: "Optimized Platform Performance",
-        description:
-          "Achieved notable improvements in platform performance by implementing strategic optimizations, resulting in faster load times and enhanced overall responsiveness",
-      },
-
-      {
-        name: "Scalable and Efficient Codebase",
-        description:
-          "Developed a scalable and efficient codebase for the EdTech platform, ensuring the application could handle increased user traffic and data without compromising performance.",
-      },
-      {
-        name: "Continuous Learning and Skill Development",
-        description:
-          "Committed to continuous learning and skill development, staying updated with the latest technologies and best practices in frontend development to bring cutting-edge solutions to the platform",
-      },
-    ],
-    images: [
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853062/Screenshot_2023-12-29_at_13.30.13_uazncv.png",
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853062/Screenshot_2023-12-29_at_13.29.15_b7mign.png",
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853061/Screenshot_2023-12-29_at_13.29.26_wr1ij9.png",
-    ],
-    live: true,
   },
 
   {
@@ -307,6 +303,79 @@ export const works = [
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854580/Screenshot_2023-12-29_at_13.53.11_xpc792.png",
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854546/Screenshot_2023-12-29_at_13.53.43_a0koum.png",
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854586/Screenshot_2023-12-29_at_13.53.59_xjmijj.png",
+    ],
+    live: true,
+  },
+
+  {
+    title: "Your Study Path",
+    slug: "your-study-path",
+    role: "Lead Frontend Developer",
+    timeline: "17 months",
+    image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703806342/ysplogo_pzaark.svg",
+    description:
+      "As the Lead Frontend Developer at Your Study Path, I spearheaded the development of an innovative EdTech platform using ReactJS. In this pivotal role, I played a key part in crafting a dynamic and user-friendly interface for the platform, ensuring an optimal user experience for students and educators alike",
+    url: "https://yourstudypath.com",
+    features: [
+      {
+        name: "Mock Exam",
+        description:
+          "Implemented a robust mock exam feature that provided students with a realistic simulation of exam scenarios. This feature allowed students to practice and assess their knowledge in a controlled environment, helping them prepare effectively for actual exams",
+      },
+      {
+        name: "Educational Resources Repository",
+        description:
+          "Developed a comprehensive repository for educational resources, including notes and materials. This centralized hub facilitated easy access to learning materials, enhancing the overall learning experience for students by providing organized and readily available resources.",
+      },
+      {
+        name: "Class Scheduling System",
+        description:
+          "Orchestrated a user-friendly class scheduling system that enabled seamless coordination between students and tutors. This feature allowed users to schedule and manage their classes efficiently, ensuring a structured and organized approach to their learning journey",
+      },
+      {
+        name: "Recorded Video Courses",
+        description:
+          "Integrated a recorded video feature that enabled students to access pre-recorded courses at their own pace. This on-demand learning feature provided flexibility, allowing students to review course content at their convenience and reinforcing key concepts",
+      },
+      {
+        name: "Live Video Classes",
+        description:
+          "Implemented live video classes, creating an interactive and engaging learning environment. This real-time feature allowed students to participate in live sessions, interact with tutors, and collaborate with peers, fostering a sense of community and enhancing the overall learning experience",
+      },
+    ],
+    problem: [
+      "In my capacity as Lead Frontend Developer at Your Study Path, my foremost initiative was to elevate the user experience and interface of the EdTech platform. Utilizing ReactJS, I led a comprehensive redesign that not only enhanced the platform's aesthetics but also greatly improved navigation, accessibility, and overall visual appeal. This transformative effort culminated in a more engaging and satisfying experience for both students and educators.",
+      "Addressing a critical need for effective exam preparation, I directed the development and integration of a robust mock exam feature. This addition provided students with a realistic simulation of exam scenarios, offering a valuable tool for self-assessment and boosting confidence. Simultaneously, I recognized the challenge of scattered educational resources and responded by creating a centralized repository for notes and materials. This strategic move streamlined access to study materials, offering a unified platform that significantly improved the efficiency of the learning experience.",
+      "Furthermore, my role involved solving coordination challenges within the platform. I orchestrated the implementation of a user-friendly class scheduling system, providing an organized approach to class coordination between students and tutors. Additionally, I catered to diverse learning preferences by introducing both recorded and live video functionalities. This flexibility empowered students to engage with course content at their own pace or participate in real-time sessions, thereby accommodating a spectrum of learning styles. Through these initiatives, I not only optimized the platform's performance but also fostered a collaborative and enriched educational environment at Your Study Path.",
+    ],
+    achievements: [
+      {
+        name: "Staff of the Quarter Recognition",
+        description:
+          "Acknowledged as the Staff of the Quarter for outstanding contributions to the company. This recognition reflects a consistent commitment to excellence and significant impact on project success",
+      },
+      {
+        name: "Optimized Platform Performance",
+        description:
+          "Achieved notable improvements in platform performance by implementing strategic optimizations, resulting in faster load times and enhanced overall responsiveness",
+      },
+
+      {
+        name: "Scalable and Efficient Codebase",
+        description:
+          "Developed a scalable and efficient codebase for the EdTech platform, ensuring the application could handle increased user traffic and data without compromising performance.",
+      },
+      {
+        name: "Continuous Learning and Skill Development",
+        description:
+          "Committed to continuous learning and skill development, staying updated with the latest technologies and best practices in frontend development to bring cutting-edge solutions to the platform",
+      },
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853062/Screenshot_2023-12-29_at_13.30.13_uazncv.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853062/Screenshot_2023-12-29_at_13.29.15_b7mign.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703853061/Screenshot_2023-12-29_at_13.29.26_wr1ij9.png",
     ],
     live: true,
   },

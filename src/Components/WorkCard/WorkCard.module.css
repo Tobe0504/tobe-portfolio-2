@@ -30,6 +30,21 @@
   border-bottom: 1px solid #fff;
 }
 
+.titleSection > p {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 1rem;
+}
+
+.titleSection > p > span:nth-child(1) {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .titleSection > span {
   width: 44px;
   height: 44px;
