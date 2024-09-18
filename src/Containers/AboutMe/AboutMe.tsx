@@ -35,11 +35,11 @@ const AboutMe = () => {
     },
     {
       title: "ReactJs",
-      progress: 0.8,
+      progress: 0.9,
     },
     {
       title: "React Context API",
-      progress: 0.8,
+      progress: 0.9,
     },
     {
       title: "NextJs",
@@ -48,6 +48,10 @@ const AboutMe = () => {
     {
       title: "VueJs",
       progress: 0.7,
+    },
+    {
+      title: "Github",
+      progress: 0.9,
     },
   ];
 
@@ -85,6 +89,12 @@ const AboutMe = () => {
       timeline: "July 2023- Present",
       workdone:
         "As a Frontend Developer at Proptask, I was part of the development of a forward-thinking property tech platform, revolutionizing the way users buy and sell properties internationally from their phones. Taking charge of the frontend components in VueJs, I ensured the creation of an intuitive, visually appealing interface for seamless transactions.",
+    },
+    {
+      roleAndCompany: "Frontend Developer | Criterion Homes Limited (Contract)",
+      timeline: "June 2024- July 2024",
+      workdone:
+        "As a Frontend Developer at Criterion Homes Limited, I contributed to the development of an innovative property tech platform, transforming how users search for properties and interact with agents. Leading the frontend efforts, I created a user-friendly, visually appealing interface that streamlined property transactions. Collaborating with cross-functional teams, I integrated secure user forms and real-time property listings, improving transparency and user experience throughout the platform.",
     },
     {
       roleAndCompany: "Frontend Developer | iśè",
@@ -133,7 +143,7 @@ const AboutMe = () => {
               );
             })}
             <a
-              href="https://drive.google.com/file/d/10uFi3JronQKsV2YgvbXB0YsuhGwSUueT/view?usp=sharing"
+              href="https://drive.google.com/file/d/1NB0tsLNeWDV5EbA8qMQaF16ip8evzYPA/view?usp=drive_link"
               target="_blank"
               rel="noreferrer"
               className={classes.resume}
@@ -145,9 +155,9 @@ const AboutMe = () => {
 
         <motion.div variants={meVariants}>
           <h3>EDUCATION</h3>
-          <h4>B.Sc in Statistics</h4>
+          <h4>B.Sc in Statistics and Data Science</h4>
           <p>University of Lagos</p>
-          <p>2018 - present</p>
+          <p>2018 - 2024 ✅</p>
         </motion.div>
 
         <motion.div variants={meVariants}>

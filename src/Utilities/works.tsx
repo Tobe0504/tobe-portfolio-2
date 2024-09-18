@@ -1,11 +1,72 @@
 export const works = [
   {
     image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1726658290/logoLight_t2hbob.svg",
+    title: "Criterion Homes Limited",
+    slug: "criterion-homes-limited",
+    role: "Frontend Developer",
+    timeline: "1 month",
+    description:
+      "As a Frontend Developer at Criterion Homes Limited, I contributed to the development of an innovative property tech platform, transforming how users search for properties and interact with agents. Leading the frontend efforts, I created a user-friendly, visually appealing interface that streamlined property transactions. Collaborating with cross-functional teams, I integrated secure user forms and real-time property listings, improving transparency and user experience throughout the platform.",
+    url: "https://criterionhomesltd.com/",
+    features: [
+      {
+        name: "User-Friendly Property Search",
+        description:
+          "Implement advanced search filters and intuitive navigation, allowing users to easily find properties based on location, price range, and preferences.",
+      },
+      {
+        name: "Agent Transparency",
+        description:
+          "Provide detailed agent profiles, including reviews and ratings, to build trust and improve client-agent interactions.",
+      },
+      {
+        name: "Real-Time Property Listings",
+        description:
+          "Offer up-to-date property information with real-time updates on availability, pricing, and status changes to eliminate outdated listings.",
+      },
+      {
+        name: "Secure Payment Gateway Integration",
+        description:
+          "Integrate reliable and secure payment gateways to allow seamless online transactions for property purchases or deposits.",
+      },
+      {
+        name: "Property Comparison Tool",
+        description:
+          "Enable users to compare multiple properties side-by-side to make well-informed decisions quickly and efficiently.",
+      },
+      {
+        name: "Automated Communication and Scheduling",
+        description:
+          "Simplify agent-client interactions with automated scheduling tools and messaging systems for property viewings and negotiations.",
+      },
+      {
+        name: "Secure Data Handling",
+        description:
+          "Ensure robust security measures for data protection and secure transactions to enhance user trust and minimize fraud risk.",
+      },
+    ],
+    problem: [
+      "Simplifying the process for users to find properties that meet their specific criteria (location, price, size, etc.) with advanced search filters and a user-friendly interface",
+      "Providing users with detailed profiles and reviews of real estate agents to foster trust and transparency in agent-client interactions",
+      "Digitizing and automating property transactions and communication to reduce delays, paperwork, and human error, improving the speed and efficiency of buying/selling properties",
+      "Addressing concerns around data security and transaction safety by ensuring a secure platform, minimizing the risks of fraud",
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1726658169/Screenshot_2024-09-18_at_12.14.57_y0gdm8.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1726658170/Screenshot_2024-09-18_at_12.15.36_gc4mbf.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1726658168/Screenshot_2024-09-18_at_12.15.49_zhxxbs.png",
+    ],
+    live: true,
+  },
+
+  {
+    image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461616/iseLogoWhite_lp9imp.svg",
     title: "iṣẹ́ School",
     slug: "ise-school",
     role: "Frontend Developer",
-    timeline: "5 months",
+    timeline: "1 year",
     description:
       "As a frontend developer at iṣẹ́ School, I contributed to the development of innovative and user-friendly interfaces for our educational technology platform. I collaborated with cross-functional teams to translate design concepts into responsive and visually appealing web applications, enhancing the overall user experience. My responsibilities included implementing frontend functionalities, optimizing performance, and ensuring compatibility across various devices and browsers to provide seamless access to educational resources for our users",
     url: "https://iseschool.co/",
@@ -454,52 +515,6 @@ export const works = [
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854912/Screenshot_2023-12-29_at_14.00.29_v94t8w.png",
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854914/Screenshot_2023-12-29_at_14.00.55_pnh5iu.png",
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703854912/Screenshot_2023-12-29_at_14.01.14_migbt0.png",
-    ],
-    live: true,
-  },
-
-  {
-    title: "AIESEC in Nigeria National Congress Jos 2024 ",
-    slug: "ain-nc-jos",
-    role: "Frontend Developer",
-    timeline: "3 weeks",
-    image:
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703807709/aiesec_caigje.png",
-    description:
-      "As the Frontend Developer for AIESEC in Nigeria' online registration project for their conference, my role was instrumental in transforming the traditional manual registration process into a streamlined and user-friendly online experience. Leveraging my expertise, I crafted an intuitive and visually appealing frontend that not only captured the essence of the conference event but also facilitated seamless user interaction. The design prioritized simplicity, ensuring easy navigation for users to complete the registration process effortlessly. By implementing responsive design principles, the online registration became accessible across devices, providing attendees with a convenient and efficient way to register for the dinner event. This project showcased my commitment to enhancing user experiences through innovative frontend solutions and contributing to the success of AIESEC in Lagos' events",
-    url: "https://ail-eclipse.netlify.app",
-    features: [
-      {
-        name: "Data Validation and Error Handling",
-        description:
-          "Incorporated data validation features to ensure accuracy in the information provided by attendees, minimizing errors in the registration process. The platform also featured effective error handling to guide users in correcting any mistakes",
-      },
-      {
-        name: "Real-Time Confirmation and Notifications",
-        description:
-          "Provided real-time confirmation messages and notifications to attendees upon successful registration, offering instant acknowledgment and feedback to enhance user engagement",
-      },
-      {
-        name: "Event Information Section",
-        description:
-          "Included a dedicated section with comprehensive information about the annual dinner event, covering details such as date, venue, agenda, and any other relevant information to assist attendees in making informed decisions",
-      },
-      {
-        name: "Automated Attendee Management:",
-        description:
-          "Implemented automated attendee management features to efficiently handle and organize participant data, reducing manual efforts and potential errors associated with large volumes of registrations",
-      },
-    ],
-    problem: [
-      " The traditional manual registration process posed challenges in terms of efficiency and data management",
-      "Manual registration processes often led to data errors and challenges in efficiently managing attendee information",
-      "Real-Time Confirmation and Feedback",
-      "Promotion and Engagement",
-    ],
-
-    images: [
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703855011/Screenshot_2023-12-29_at_14.02.47_pcrf0k.png",
-      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1703855014/Screenshot_2023-12-29_at_14.03.02_whfxl3.png",
     ],
     live: true,
   },
