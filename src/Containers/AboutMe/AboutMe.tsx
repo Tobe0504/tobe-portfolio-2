@@ -86,7 +86,7 @@ const AboutMe = () => {
 
     {
       roleAndCompany: "Frontend Developer | Proptask (Contribution)",
-      timeline: "July 2023- Present",
+      timeline: "July 2023- September 2024",
       workdone:
         "As a Frontend Developer at Proptask, I was part of the development of a forward-thinking property tech platform, revolutionizing the way users buy and sell properties internationally from their phones. Taking charge of the frontend components in VueJs, I ensured the creation of an intuitive, visually appealing interface for seamless transactions.",
     },
@@ -98,9 +98,16 @@ const AboutMe = () => {
     },
     {
       roleAndCompany: "Frontend Developer | iśè",
-      timeline: "October 2023- Present",
+      timeline: "October 2023- September 2024",
       workdone:
         "As a Frontend Developer and tech lead at Iśè, I played a pivotal role in designing and implementing user interfaces that seamlessly blend functionality with an exceptional user experience.",
+    },
+
+    {
+      roleAndCompany: "Frontend Developer | Beuvo",
+      timeline: "September 2024- November 2024",
+      workdone:
+        "As a Frontend Developer at Beuvo, I contributed to building a platform that enables users to conveniently book beauty services and manage tasks. I developed a user-friendly and responsive interface, ensuring seamless navigation and an enhanced user experience. Collaborating with cross-functional teams, I implemented features for service booking, task management, and real-time updates, streamlining the platform's functionality and user engagement. ",
     },
   ];
 
@@ -116,14 +123,14 @@ const AboutMe = () => {
           <img src={mempji} alt="Ezimorah Tobenna" />
           <h4>Ezimorah Tobenna</h4>
           <p>
-            Welcome to my frontend world! I'm Tobenna Ezimorah, a passionate and
-            innovative frontend developer with a knack for turning creative
+            Welcome to my frontend showcase! I'm Tobenna Ezimorah, a passionate
+            and innovative frontend developer with a knack for turning creative
             visions into seamless digital experiences. With a strong foundation
-            in technologies like ReactJS and a keen eye for design, I specialize
-            in crafting engaging and user-friendly websites. Explore my
-            portfolio to witness how I bring ideas to life through clean code,
-            intuitive interfaces, and a commitment to enhancing the digital
-            landscape.
+            in technologies like ReactJS and VueJs and a keen eye for design, I
+            specialize in crafting engaging and user-friendly websites. Explore
+            my portfolio to witness how I bring ideas to life through clean
+            code, intuitive interfaces, and a commitment to enhancing the
+            digital landscape.
           </p>
         </motion.div>
         <motion.div variants={meVariants}>
@@ -143,7 +150,7 @@ const AboutMe = () => {
               );
             })}
             <a
-              href="https://drive.google.com/file/d/1NB0tsLNeWDV5EbA8qMQaF16ip8evzYPA/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1BcGBgQzQd-ztC24ZqZXcHoWn4JtmGNAb/view?usp=drive_link"
               target="_blank"
               rel="noreferrer"
               className={classes.resume}

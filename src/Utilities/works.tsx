@@ -62,6 +62,132 @@ export const works = [
 
   {
     image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732260089/DALL_E_2024-11-20_13.12.09_-_A_minimalist_black_and_white_icon_for_a_favicon_for_a_video_conferencing_app_named__Zync_._The_design_features_a_sleek__abstract__Z__symbol__with_clea-removebg-preview_o6gxgd.png",
+    title: "Zync",
+    slug: "zync",
+    role: "Frontend Developer (Personal Project)",
+    timeline: "3 days",
+    description:
+      "As a Frontend Developer working on Zync, I developed an intuitive and responsive interface for a cutting-edge video conferencing platform. Collaborating with cross-functional teams, I implemented real-time video, chat, and scheduling features, enhancing user experience and platform efficiency",
+    url: "https://tobe0504.github.io/Zync-Web-Video-Conferencing/",
+    features: [
+      {
+        name: "Enhanced User Privacy",
+        description:
+          "Implement robust encryption protocols and privacy-focused features, ensuring that user data and conversations remain secure and confidential.",
+      },
+      {
+        name: "High-Quality Video and Audio Streaming",
+        description:
+          "Provide reliable and seamless video and audio streaming with adaptive quality to maintain performance across different network conditions.",
+      },
+      {
+        name: "Screen Sharing",
+        description:
+          "Enable participants to share their screens for presentations, collaboration, and interactive discussions during video calls.",
+      },
+      {
+        name: "Participant Management",
+        description:
+          "Introduce a comprehensive participant management system, allowing hosts to control who joins, assign roles, and moderate discussions effectively.",
+      },
+      {
+        name: "Lobby and Waiting Room",
+        description:
+          "Enhance meeting security by incorporating a lobby system where hosts can review and approve participants before admitting them to the meeting.",
+      },
+      {
+        name: "Customizable Views",
+        description:
+          "Allow participants to switch between gallery view, speaker view, and pinned views for a personalized experience during calls.",
+      },
+      {
+        name: "Cross-Platform Compatibility",
+        description:
+          "Ensure seamless functionality across devices, including desktop, mobile, and web, for a consistent user experience.",
+      },
+      {
+        name: "Secure Data Transmission",
+        description:
+          "Implement end-to-end encryption and advanced security measures for audio, video, and file sharing to protect against unauthorized access.",
+      },
+    ],
+    problem: [
+      "Existing video conferencing platforms often fail to prioritize user privacy, making it crucial to create a solution with robust encryption and data protection.",
+      "Many platforms struggle to provide consistent video and audio quality, especially in low-bandwidth conditions, leading to a poor user experience.",
+      "There is a need for effective collaboration tools, such as reliable screen sharing and participant management, to support remote work, education, and other use cases.",
+      "Meeting security is often inadequate, with unauthorized participants being a common issue. This highlights the need for features like lobbies and waiting rooms.",
+      "Users often lack the ability to customize their meeting interfaces, such as switching between different view modes, making the experience less intuitive and engaging.",
+      "Cross-platform functionality is limited in many solutions, creating a need for seamless compatibility across desktop, mobile, and web platforms.",
+      "With sensitive information frequently shared during meetings, there is a pressing need for end-to-end encryption and secure data transmission to protect user trust.",
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732259773/Screenshot_2024-11-22_at_07.44.40_vp8m99.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732259773/Screenshot_2024-11-22_at_08.15.22_rre8pb.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732259773/Screenshot_2024-11-22_at_08.15.36_zsxgpd.png",
+    ],
+    live: true,
+  },
+
+  {
+    image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732260427/task_cfuvz0.jpg",
+    title: "Do",
+    slug: "do",
+    role: "Frontend Developer (Personal Project)",
+    timeline: "1 month",
+    description:
+      "As a Frontend Developer working on Do, I developed an efficient and responsive interface for a task management platform designed for offline use. I implemented features such as barcode-based task transfer and seamless offline management, ensuring user convenience and reliability.",
+    url: "https://do-tobe.vercel.app",
+    features: [
+      {
+        name: "Offline Task Management",
+        description:
+          "Enable users to create, edit, and manage tasks entirely offline, ensuring uninterrupted productivity without requiring an active internet connection.",
+      },
+      {
+        name: "Barcode-Based Task Transfer",
+        description:
+          "Introduce a barcode scanning feature for easy and secure task sharing between devices, even in offline environments.",
+      },
+      {
+        name: "Robust Task Organization",
+        description:
+          "Implement features for categorizing, prioritizing, and filtering tasks, helping users stay organized and focused on their goals.",
+      },
+      {
+        name: "User-Friendly Interface",
+        description:
+          "Design an intuitive and visually appealing interface to simplify task creation and management for users of all technical backgrounds.",
+      },
+      {
+        name: "Data Persistence",
+        description:
+          "Ensure that all task data is securely stored locally on the device, providing reliability and security for offline usage.",
+      },
+      {
+        name: "Seamless Sync (Optional)",
+        description:
+          "Offer optional sync capabilities for when the device goes online, ensuring data integrity across devices while maintaining offline-first functionality.",
+      },
+    ],
+
+    problem: [
+      "Many task management platforms rely heavily on internet connectivity, making them unreliable for users in low-connectivity or offline scenarios.",
+      "Sharing tasks between devices is often cumbersome and dependent on online services, creating a need for innovative offline solutions.",
+      "Users require a straightforward and efficient way to organize and manage their tasks without unnecessary complexity or technical hurdles.",
+      "Ensuring data security and persistence in offline environments remains a challenge for most platforms.",
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732260349/Screenshot_2024-11-22_at_08.25.29_tn5uiw.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732260346/Screenshot_2024-11-22_at_08.25.14_hp24vu.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1732260346/Screenshot_2024-11-22_at_08.25.14_hp24vu.png",
+    ],
+    live: true,
+  },
+
+  {
+    image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1712461616/iseLogoWhite_lp9imp.svg",
     title: "iṣẹ́ School",
     slug: "ise-school",
