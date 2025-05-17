@@ -1,6 +1,187 @@
 export const works = [
   {
     image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487191/Screenshot_2025-05-17_at_14.01.48-removebg-preview_whgdjq.png",
+    title: "Bookmolly",
+    slug: "bookmolly",
+    role: "Senior Frontend Developer",
+    timeline: "3 months",
+    description:
+      "As a Frontend Engineer Developer at Bookmolly, I built an intuitive service-ordering e-commerce platform that connects users with beauty and lifestyle professionals. Leading the entire development process, I designed a seamless booking experience through a user-friendly interface and real-time scheduling features. Collaborating across design and backend integration, I ensured secure payment processing and smooth service filtering to deliver convenience and reliability to customers and service providers alike.",
+    url: "https://www.bookmolly.com/",
+    features: [
+      {
+        name: "Seamless Service Booking",
+        description:
+          "Enable users to easily browse and book beauty and lifestyle services with real-time availability and scheduling.",
+      },
+      {
+        name: "Advanced Service Filtering",
+        description:
+          "Allow users to filter services by category, price, rating, and location, making it simple to find exactly what they need.",
+      },
+      {
+        name: "Secure Payment Processing",
+        description:
+          "Integrate trusted payment gateways to handle transactions securely and efficiently, giving users confidence in the platform.",
+      },
+      {
+        name: "User Account Management",
+        description:
+          "Provide customers and service providers with personalized dashboards to manage bookings, profiles, and reviews.",
+      },
+      {
+        name: "Responsive and Intuitive UI",
+        description:
+          "Deliver a mobile-friendly, visually appealing interface that ensures a smooth and engaging user experience across devices.",
+      },
+      {
+        name: "Service Provider Profiles",
+        description:
+          "Show detailed profiles including service descriptions, pricing, ratings, and reviews to help users make informed decisions.",
+      },
+      {
+        name: "Performance Optimization",
+        description:
+          "Ensure fast load times and efficient interactions through optimized frontend and backend architecture.",
+      },
+    ],
+    problem: [
+      "Simplifying the process of discovering and booking beauty and lifestyle services by providing a centralized, easy-to-navigate platform.",
+      "Addressing the challenge of real-time scheduling and availability for multiple service providers to prevent double bookings and improve user trust.",
+      "Ensuring secure and smooth payment transactions within the platform to build confidence and reduce friction for users.",
+      "Delivering a responsive and accessible user experience that meets the needs of diverse users across devices and locations.",
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487067/Screenshot_2025-05-17_at_13.51.49_nrcpbh.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487065/Screenshot_2025-05-17_at_13.52.15_z63x9e.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487080/Screenshot_2025-05-17_at_13.52.46_tpa6kh.png",
+    ],
+    live: true,
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487192/Screenshot_2025-05-17_at_14.02.38-removebg-preview_yhopar.png",
+    title: "Insure All The Way",
+    slug: "insure-all-the-way",
+    role: "Full-Stack Engineer",
+    timeline: "3 months",
+    description:
+      "As a  Full-Stack Developer for Insure All The Way, I built a comprehensive insurance platform from the ground up to simplify insurance purchasing and management. I led all aspects of development, designing a secure and scalable backend with Express.js and Node.js, while crafting a responsive frontend with React. The platform provides users with real-time quotes, policy management, and secure payment processing, enhancing the customer experience with transparency and ease of use.",
+    url: "https://www.insurealltheway.co/",
+    features: [
+      {
+        name: "Real-Time Insurance Quotes",
+        description:
+          "Allow users to get instant insurance quotes tailored to their needs through a dynamic, easy-to-use interface.",
+      },
+      {
+        name: "Policy Management Dashboard",
+        description:
+          "Provide users with a centralized dashboard to view, update, and manage their insurance policies seamlessly.",
+      },
+      {
+        name: "Secure User Authentication",
+        description:
+          "Implement robust authentication and authorization mechanisms to protect user data and ensure privacy.",
+      },
+      {
+        name: "Payment Integration",
+        description:
+          "Enable secure and efficient payment processing for purchasing or renewing insurance policies directly within the platform.",
+      },
+      {
+        name: "Responsive Design",
+        description:
+          "Deliver a consistent and accessible user experience across all devices, including desktop and mobile.",
+      },
+      {
+        name: "Backend Scalability",
+        description:
+          "Build a scalable backend infrastructure to handle increasing user demand and ensure system reliability.",
+      },
+      {
+        name: "Data Security and Compliance",
+        description:
+          "Incorporate strong encryption, secure data storage, and compliance with industry regulations to safeguard sensitive information.",
+      },
+    ],
+    problem: [
+      "Simplifying the complex process of obtaining insurance quotes and managing policies in a user-friendly online environment.",
+      "Ensuring secure and seamless payment processing to facilitate smooth transactions between customers and insurance providers.",
+      "Providing real-time updates and transparent policy management tools to enhance user trust and engagement.",
+      "Building a scalable and secure platform capable of handling sensitive customer data while complying with industry standards.",
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487140/Screenshot_2025-05-17_at_13.54.40_shimqe.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487122/Screenshot_2025-05-17_at_13.54.30_mxw4dh.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487159/Screenshot_2025-05-17_at_13.54.56_rbttca.png",
+    ],
+    live: true,
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487191/Screenshot_2025-05-17_at_14.02.18-removebg-preview_fnypqg.png",
+    title: "One Click Africa",
+    slug: "one-click-africa",
+    role: "Full-Stack Developer",
+    timeline: "1 month",
+    description:
+      "As a Full-Stack Developer for One Click Africa, I helped build and maintain one of Africa’s leading news aggregator platforms. The website consolidates news from diverse African sources, providing users with a centralized, easy-to-navigate hub for timely and relevant news updates. I focused on delivering a fast, responsive interface and efficient backend architecture to handle large volumes of data and frequent updates.",
+    url: "https://www.oneclickafrica.com/",
+    features: [
+      {
+        name: "Comprehensive News Aggregation",
+        description:
+          "Aggregate news articles from multiple trusted African news sources to provide users with diverse perspectives and up-to-date information.",
+      },
+      {
+        name: "Real-Time Updates",
+        description:
+          "Ensure the platform refreshes content regularly to deliver the latest news as it happens.",
+      },
+      {
+        name: "User-Friendly Navigation",
+        description:
+          "Offer intuitive categorization and search features so users can quickly find news by topic, region, or source.",
+      },
+      {
+        name: "Responsive Design",
+        description:
+          "Deliver a seamless experience across devices, allowing users to stay informed whether on desktop or mobile.",
+      },
+      {
+        name: "Performance Optimization",
+        description:
+          "Optimize backend and frontend performance to handle high traffic and large datasets efficiently.",
+      },
+      {
+        name: "Customizable News Feed",
+        description:
+          "Allow users to personalize their news feed based on interests and preferred news categories.",
+      },
+      {
+        name: "Social Sharing",
+        description:
+          "Enable easy sharing of news articles across social media platforms to increase engagement and reach.",
+      },
+    ],
+    problem: [
+      "Centralizing news content from diverse African sources to provide users with a single, trusted platform for current events.",
+      "Handling the large volume and frequency of news updates efficiently while maintaining fast load times.",
+      "Ensuring accessibility and usability across devices to reach a wide audience with varying internet capabilities.",
+      "Providing personalized content options to enhance user engagement and satisfaction.",
+    ],
+    images: [
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487154/Screenshot_2025-05-17_at_13.58.56_jr5jxh.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487144/Screenshot_2025-05-17_at_13.59.21_libssx.png",
+      "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1747487141/Screenshot_2025-05-17_at_14.00.35_twpbxc.png",
+    ],
+    live: true,
+  },
+
+  {
+    image:
       "https://res.cloudinary.com/dmpdhnjqs/image/upload/v1726658290/logoLight_t2hbob.svg",
     title: "Criterion Homes Limited",
     slug: "criterion-homes-limited",
