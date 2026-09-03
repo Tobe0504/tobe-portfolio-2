@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 
+import { pageMetadata } from "@/lib/seo";
+
 import { PlaygroundListing } from "@/components/playground/PlaygroundListing";
 import { getPersonalProjects } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Playground",
-};
+  description:
+    "Personal projects built outside client work. Products, tools and experiments, shipped on my own time and my own constraints.",
+  path: "/playground",
+});
 
 export default async function PlaygroundPage() {
   const projects = await getPersonalProjects();

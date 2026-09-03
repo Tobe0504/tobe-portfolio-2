@@ -2,7 +2,12 @@ import { galleryItems } from "./gallery";
 import { journalPosts } from "./journal";
 import { personalProjects } from "./personal-projects";
 import { projects } from "./projects";
-import type { GalleryItem, JournalPost, PersonalProject, Project } from "./types";
+import type {
+  GalleryItem,
+  JournalPost,
+  PersonalProject,
+  Project,
+} from "./types";
 
 export * from "./types";
 export { siteConfig } from "./site";
@@ -18,7 +23,9 @@ export { galleryItems } from "./gallery";
  */
 
 export async function getProjects(): Promise<Project[]> {
-  return [...projects].sort((a, b) => (b.order ?? b.year) - (a.order ?? a.year));
+  return [...projects].sort(
+    (a, b) => (b.order ?? b.year) - (a.order ?? a.year),
+  );
 }
 
 export async function getFeaturedProjects(): Promise<Project[]> {
@@ -47,7 +54,9 @@ export async function getJournalPosts(): Promise<JournalPost[]> {
   );
 }
 
-export async function getJournalPost(slug: string): Promise<JournalPost | null> {
+export async function getJournalPost(
+  slug: string,
+): Promise<JournalPost | null> {
   return journalPosts.find((p) => p.slug === slug) ?? null;
 }
 
@@ -55,7 +64,9 @@ export async function getPersonalProjects(): Promise<PersonalProject[]> {
   return personalProjects;
 }
 
-export async function getPersonalProject(slug: string): Promise<PersonalProject | null> {
+export async function getPersonalProject(
+  slug: string,
+): Promise<PersonalProject | null> {
   return personalProjects.find((p) => p.slug === slug) ?? null;
 }
 
@@ -70,16 +81,15 @@ export async function getFeaturedGalleryItems(): Promise<GalleryItem[]> {
 export interface SiteStats {
   projectCount: number;
   clientCount: number;
-  yearsActive: number;
+  yearsActive?: number;
 }
 
 /** Computed from the real project data, not hand-maintained — stays accurate as projects.ts changes. */
 export async function getSiteStats(): Promise<SiteStats> {
-  const years = new Set(projects.map((p) => p.year));
   const clients = new Set(projects.map((p) => p.client));
   return {
-    projectCount: projects.length,
+    projectCount: projects.length + personalProjects.length,
     clientCount: clients.size,
-    yearsActive: years.size,
+    yearsActive: 5,
   };
 }

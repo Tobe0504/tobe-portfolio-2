@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 
+import { pageMetadata } from "@/lib/seo";
+
 import { ContactCTA } from "@/components/contact/ContactCTA";
 import { QuickFacts } from "@/components/contact/QuickFacts";
 import { SocialLinks } from "@/components/contact/SocialLinks";
 import { Highlight } from "@/components/shared/Highlight";
 import { RevealOnScroll } from "@/components/shared/RevealOnScroll";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
-};
+  description:
+    "Have a project, a question, or just want to talk shop? Get in touch. I usually reply within 24 hours.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

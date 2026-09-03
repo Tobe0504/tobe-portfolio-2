@@ -71,7 +71,11 @@ export function StatsReveal({ stats }: StatsRevealProps) {
         {items.map((item) => (
           <div key={item.label} className="text-center">
             <p className="font-heading text-6xl text-lemon md:text-7xl">
-              {reducedMotion ? item.value : <span data-stat-value>0</span>}
+              {reducedMotion ? (
+                `${item.value}+`
+              ) : (
+                <span data-stat-value>0</span>
+              )}
             </p>
             <p className="mt-3 text-xs tracking-normal opacity-60 lowercase">
               {item.label}

@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 
+import { pageMetadata } from "@/lib/seo";
+
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { getGalleryItems } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Gallery",
-};
+  description:
+    "A loose, unsorted archive of shots, frames and fragments collected off the clock.",
+  path: "/gallery",
+});
 
 export default async function GalleryPage() {
   const items = await getGalleryItems();

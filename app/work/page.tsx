@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { pageMetadata } from "@/lib/seo";
+
 import { WorkApproach } from "@/components/work/WorkApproach";
 import { WorkHero } from "@/components/work/WorkHero";
 import { WorkImagePair } from "@/components/work/WorkImagePair";
@@ -8,9 +10,12 @@ import { WorkListing } from "@/components/work/WorkListing";
 import { WorkScrollReveal } from "@/components/work/WorkScrollReveal";
 import { getPersonalProjects, getProjects } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Work",
-};
+  description:
+    "Client work across fintech, edtech, corporate and sports media. Case studies covering what each project needed, what was hard, and what shipped.",
+  path: "/work",
+});
 
 // Curated, not derived from the full project.category strings (those run
 // long — "Corporate Site / Global Trade" — which reads fine in a list row

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 
 import { PersonalProjectDetail } from "@/components/playground/PersonalProjectDetail";
@@ -27,7 +29,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = await getPersonalProject(slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary };
+  // A real screenshot when the project has one, so a shared link previews the
+  // work itself. Left off when it does not, which falls back to the site card
+  // rather than emitting a broken image reference.
+  const image = project.cover.image?.src;
+  return pageMetadata({
+    title: project.title,
+    description: project.summary,
+    path: `/playground/${project.slug}`,
+    type: "article",
+    images: image ? [{ url: image, alt: project.cover.image?.alt }] : undefined,
+  });
 }
 
 export default async function PersonalProjectPage({ params }: PersonalProjectPageProps) {
