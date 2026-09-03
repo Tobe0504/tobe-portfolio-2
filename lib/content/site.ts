@@ -8,10 +8,10 @@ export const siteConfig: SiteConfig = {
   description:
     "I'm Tobe, a product engineer who designs, builds, and ships thoughtful digital experiences. From frontend architecture to backend systems, I enjoy turning ambitious ideas into reliable products that feel effortless to use.",
   email: "ezimorahtobenna@gmail.com",
-  location: "Lagos, Nigeria, working remotelty",
+  location: "Lagos, Nigeria, working remotely",
   nav: [
     { label: "Work", href: "/work" },
-    { label: "About", href: "/manifest" },
+    { label: "Manifest", href: "/manifest" },
     { label: "Playground", href: "/playground" },
     { label: "Journal", href: "/journal" },
     { label: "Gallery", href: "/gallery" },
@@ -19,8 +19,8 @@ export const siteConfig: SiteConfig = {
   ],
   social: [
     { label: "Email", href: "mailto:ezimorahtobenna@gmail.com" },
-    { label: "GitHub", href: "https://github.com/yourusername" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-    { label: "X", href: "https://x.com/yourusername" },
+    { label: "GitHub", href: "https://github.com/tobe0504" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/tobenna-ezimorah" },
+    { label: "X", href: "https://x.com/volfgng" },
   ],
 };

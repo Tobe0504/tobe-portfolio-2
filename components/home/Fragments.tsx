@@ -70,7 +70,7 @@ function FragmentCard({
  */
 export function Fragments() {
   return (
-    <section className="px-6 py-24 md:px-10">
+    <section className="px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-400">
         <p className="text-xs tracking-normal text-muted-foreground lowercase">
           Notes

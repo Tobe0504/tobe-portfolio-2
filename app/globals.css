@@ -223,23 +223,6 @@ html.lenis.lenis-smooth {
   }
 }
 
-/* Hard backstop for the Preloader — forces it hidden after 15s even if JS
-   never hydrates, so a failure there can never permanently block the site.
-   Must stay longer than FACTS.length * STEP_MS in Preloader.tsx (currently
-   5 * 2050ms = 10.25s) — this can't reference that constant directly since
-   it's a plain CSS keyframe, so if STEP_MS grows enough to threaten this
-   margin, bump the delay below too. */
-@keyframes preloader-failsafe {
-  to {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-.preloader-failsafe {
-  animation: preloader-failsafe 0.01s 15s forwards;
-}
-
 /* Moodboard's scattered tiles — per-item rotation/offset come from --tilt/
    --lift set inline (dynamic per-index values can't be expressed as static
    Tailwind classes), straightening on hover as the section's one micro-
@@ -275,4 +258,79 @@ body {
 .goog-text-highlight {
   background: none !important;
   box-shadow: none !important;
+}
+
+/* ── Home load intro (components/home/HeroIntro.tsx) ──────────────────────
+   The intro starts with a viewport-filling image and two headline words
+   parked off-screen, but GSAP can't apply any of that until it hydrates.
+   Without a pre-hydration hold, the browser paints the settled hero first
+   and the intro reads as a flicker-then-restart. So the stage starts hidden
+   and the header starts parked, both keyed to `data-intro="pending"`, which
+   HeroIntro flips to "done" in the same synchronous turn it hands those
+   properties back. GSAP writes inline styles, which outrank these rules the
+   moment it takes over.
+
+   `:has()` is doing real work here rather than being a flourish: the header
+   lives in the root layout, so nothing in its own subtree knows whether the
+   page under it is Home. Where it isn't supported the header simply stays
+   visible through the intro — the only rule here that degrades, and it
+   degrades to "one element didn't animate". */
+[data-hero-stage][data-intro="pending"] {
+  opacity: 0;
+}
+
+html:has([data-hero-stage][data-intro="pending"]) [data-site-header] {
+  transform: translateY(-200%);
+}
+
+/* For the first beat the image is wider than the viewport and the second
+   word is parked entirely past its right edge, and both still contribute
+   scrollable overflow to the document. Left as-is the page would be
+   horizontally pannable for two seconds. `overflow-x: hidden` rather than
+   `clip`: on the root element overflow propagates to the viewport, and the
+   propagated `clip` is honoured for painting but still leaves the document
+   scrollable sideways (verified — a scroll to x=600 took). Pairing hidden-x
+   with visible-y computes y to `auto`, so the vertical scrollbar stays put
+   and the page doesn't shift sideways when this lifts. */
+html:has([data-hero-stage][data-intro="pending"]) {
+  overflow-x: hidden;
+}
+
+/* A JS failure must never leave the hero permanently invisible — and now
+   that the intro IS the page loader, this is the site's only such backstop.
+   Timed well past the intro's own 3s so it can only ever fire on a run that
+   has genuinely stalled. */
+@keyframes hero-intro-failsafe {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hero-intro-header-failsafe {
+  to {
+    transform: translateY(0);
+  }
+}
+[data-hero-stage][data-intro="pending"] {
+  animation: hero-intro-failsafe 0.01s 8s forwards;
+}
+html:has([data-hero-stage][data-intro="pending"]) [data-site-header] {
+  animation: hero-intro-header-failsafe 0.01s 8s forwards;
+}
+
+/* Reduced motion skips the intro entirely (HeroIntro returns before building
+   the timeline), so nothing must be hidden or parked in the first place —
+   matching how the rest of this codebase treats the preference: don't
+   construct the animation, rather than construct it and disable it. */
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-stage][data-intro="pending"] {
+    opacity: 1;
+    animation: none;
+  }
+  html:has([data-hero-stage][data-intro="pending"]) [data-site-header] {
+    transform: none;
+    animation: none;
+  }
+  html:has([data-hero-stage][data-intro="pending"]) {
+    overflow-x: visible;
+  }
 }

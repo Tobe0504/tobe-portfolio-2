@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function ManifestCta() {
   return (
-    <section className="px-6 py-28 md:px-10">
+    <section className="px-6 py-16 md:px-10 md:py-28">
       <div className="mx-auto flex max-w-400 flex-col items-start gap-6">
         <p className="font-heading text-3xl md:text-4xl">
           Have a product that needs someone to own it end to end?

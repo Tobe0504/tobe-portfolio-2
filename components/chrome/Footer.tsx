@@ -29,29 +29,29 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-8 sm:flex-row sm:gap-16">
-            <div className="flex flex-col gap-2">
-              <span className="text-[11px] tracking-normal text-background/50 lowercase">
+            <div className="flex flex-col gap-0 sm:gap-2">
+              <span className="text-xs sm:text-[11px] tracking-normal text-background/50 lowercase">
                 Index
               </span>
               {siteConfig.nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm transition-colors hover:text-cta"
+                  className="flex min-h-11 items-center text-sm transition-colors hover:text-cta sm:min-h-0"
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-[11px] tracking-normal text-background/50 lowercase">
+            <div className="flex flex-col gap-0 sm:gap-2">
+              <span className="text-xs sm:text-[11px] tracking-normal text-background/50 lowercase">
                 Connect
               </span>
               {siteConfig.social.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-sm transition-colors hover:text-cta"
+                  className="flex min-h-11 items-center text-sm transition-colors hover:text-cta sm:min-h-0"
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                 >
@@ -62,7 +62,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col gap-2 border-t border-background/15 pt-6 text-[11px] tracking-normal text-background/40 lowercase sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-20 flex flex-col gap-2 border-t border-background/15 pt-6 text-xs sm:text-[11px] tracking-normal text-background/40 lowercase sm:flex-row sm:items-center sm:justify-between">
           <span>{siteConfig.location}</span>
           <span>
             © {new Date().getFullYear()} {siteConfig.name}

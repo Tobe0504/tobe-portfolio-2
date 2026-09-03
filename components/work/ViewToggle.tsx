@@ -19,7 +19,7 @@ export function ViewToggle({ view, onChange }: ViewToggleProps) {
           onClick={() => onChange(mode)}
           aria-pressed={view === mode}
           className={cn(
-            "rounded-full px-4 py-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50",
+            "inline-flex min-h-11 items-center rounded-full px-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50",
             view === mode
               ? "bg-foreground text-background"
               : "text-muted-foreground hover:text-foreground",

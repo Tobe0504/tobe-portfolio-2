@@ -31,7 +31,7 @@ export function ProjectDetail({ project, prev, next }: ProjectDetailProps) {
               ← All work
             </Link>
             <p className="mt-8 text-xs tracking-normal lowercase opacity-60">
-              {project.category} — {project.year}
+              {project.category}, {project.year}
             </p>
             <h1 className="mt-3 font-heading text-4xl leading-[0.95] font-light tracking-tight md:text-5xl">
               {project.title}
@@ -81,7 +81,7 @@ export function ProjectDetail({ project, prev, next }: ProjectDetailProps) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-background/20 px-3 py-1 text-[10px] tracking-normal lowercase opacity-70"
+                  className="rounded-full border border-background/20 px-3 py-1 text-xs sm:text-[10px] tracking-normal lowercase opacity-70"
                 >
                   {tag}
                 </span>

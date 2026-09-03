@@ -29,7 +29,7 @@ export function CursorPill({ project }: CursorPillProps) {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed top-0 left-0 z-50 rounded-full bg-cta px-3.5 py-1.5 text-[11px] tracking-normal text-cta-foreground lowercase"
+      className="pointer-events-none fixed top-0 left-0 z-50 rounded-full bg-cta px-3.5 py-1.5 text-xs sm:text-[11px] tracking-normal text-cta-foreground lowercase"
       style={{ x, y }}
       animate={{ opacity: project ? 1 : 0 }}
       transition={{ duration: 0.2 }}

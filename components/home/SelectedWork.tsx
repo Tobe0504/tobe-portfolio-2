@@ -1,18 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { CoverArt } from "@/components/shared/CoverArt";
+import { PreviewPanel } from "@/components/work/PreviewPanel";
 import { RevealOnScroll } from "@/components/shared/RevealOnScroll";
-import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { usePointerFine } from "@/hooks/use-pointer-fine";
 import type { Project } from "@/lib/content";
 import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface SelectedWorkProps {
   projects: Project[];
@@ -24,36 +19,43 @@ function chronological(projects: Project[]) {
   );
 }
 
+/**
+ * The index listing from brand.squarespace.com, applied to the project list.
+ *
+ * Theirs is six names stacked in 85px type with no rules, no thumbnails and no
+ * numbers — until you hover one. The hovered row then does two things at once:
+ * it swaps from the sans into an italic serif, and its index number appears as
+ * a superscript, pushing the name to the right to make room. Nothing else on
+ * the row moves. It reads as the list *naming* the thing you are pointing at
+ * rather than merely highlighting it, and the face swap is what carries it —
+ * a colour change alone at that size would barely register.
+ *
+ * The serif is already in this project (`--font-display-serif`, Instrument
+ * Serif, loaded in the root layout with its italic) and already means this
+ * exact thing here: `Highlight` uses italic serif as the site's "one lifted
+ * word" device. So the swap lands as the site's own idiom rather than as a
+ * borrowed trick.
+ *
+ * What replaced what: this was an alternating left/right timeline of cover
+ * screenshots down a scrubbed vertical rail. The rail went with it — a
+ * progress spine reads as "you are moving through a sequence", which was true
+ * of the timeline and is not true of a flat index. The covers did not go: they
+ * moved into `PreviewPanel`, the same fixed hover preview the /work listing
+ * uses, so the screenshots still carry the page on desktop and the list stays
+ * the structure. Squarespace shows no preview at all; keeping one is a
+ * deliberate departure, because losing every project image from the home page
+ * would cost more than matching the reference exactly is worth.
+ */
 export function SelectedWork({ projects }: SelectedWorkProps) {
-  const reducedMotion = useReducedMotion();
-  const railRef = useRef<HTMLDivElement>(null);
-  const fillRef = useRef<HTMLDivElement>(null);
+  // The preview is desktop-only and unmounted rather than hidden on touch —
+  // same contract the /work listing has with this component.
+  const pointerFine = usePointerFine();
+  const [hovered, setHovered] = useState<string | null>(null);
   const ordered = chronological(projects);
-
-  useGSAP(
-    () => {
-      if (reducedMotion || !railRef.current || !fillRef.current) return;
-
-      gsap.fromTo(
-        fillRef.current,
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: railRef.current,
-            start: "top 75%",
-            end: "bottom 65%",
-            scrub: 0.6,
-          },
-        },
-      );
-    },
-    { scope: railRef, dependencies: [reducedMotion] },
-  );
+  const active = ordered.find((project) => project.slug === hovered) ?? null;
 
   return (
-    <section className="px-6 py-24 md:px-10">
+    <section className="px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-400">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -66,83 +68,75 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
           </div>
           <Link
             href="/work"
-            className="text-xs tracking-normal text-muted-foreground lowercase transition-colors hover:text-cta"
+            className="inline-flex min-h-11 items-center text-xs tracking-normal text-muted-foreground lowercase transition-colors hover:text-cta"
           >
             View all work →
           </Link>
         </div>
 
-        <div ref={railRef} className="relative mt-20 md:mt-24">
-          <div className="absolute inset-y-0 left-4 w-px bg-border md:left-1/2 md:-translate-x-1/2">
-            <div
-              ref={fillRef}
-              className={cn(
-                "h-full w-full origin-top bg-cta",
-                !reducedMotion && "scale-y-0",
-              )}
-            />
-          </div>
-
-          <ol className="flex flex-col gap-20 md:gap-28">
-            {ordered.map((project, i) => {
-              const onRight = i % 2 === 1;
-              return (
-                <li key={project.slug} className="relative">
-                  <RevealOnScroll
-                    delay={(i % 4) * 0.06}
-                    className="md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-10"
+        <ol
+          className="mt-16 md:mt-20 md:max-w-[58%]"
+          onMouseLeave={() => setHovered(null)}
+          onBlur={() => setHovered(null)}
+        >
+          {ordered.map((project, index) => {
+            const dimmed = hovered !== null && hovered !== project.slug;
+            return (
+              <li key={project.slug}>
+                <RevealOnScroll delay={(index % 4) * 0.06}>
+                  <Link
+                    href={`/work/${project.slug}`}
+                    data-cursor-label="View project"
+                    onMouseEnter={() => setHovered(project.slug)}
+                    onFocus={() => setHovered(project.slug)}
+                    className={cn(
+                      "group relative block py-2 transition-opacity duration-300 md:py-1",
+                      // Lighter than the 0.25 the shared HoverDimList uses.
+                      // The reference dims nothing at all — the face swap is
+                      // its whole signal — but this site has taught its other
+                      // listings to dim, so this keeps the cue and pulls it
+                      // back to where it supports the swap instead of
+                      // out-shouting it.
+                      dimmed ? "opacity-45" : "opacity-100",
+                    )}
                   >
-                    <span className="absolute top-8 left-4 z-10 size-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-cta bg-background md:static md:col-start-2 md:size-3 md:translate-x-0 md:translate-y-0 md:justify-self-center" />
-
-                    <div
-                      className={cn(
-                        "pl-12 md:pl-0",
-                        onRight ? "md:col-start-3" : "md:col-start-1",
-                      )}
+                    {/* Absolute so its arrival costs no layout: the name's own
+                        shift right is what makes room for it, which keeps the
+                        two halves of the reveal on the same beat instead of
+                        the number nudging the row as it fades. */}
+                    <span
+                      aria-hidden="true"
+                      className="absolute top-[0.35em] left-0 text-xs tracking-normal text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 md:text-sm"
                     >
-                      <Link
-                        href={`/work/${project.slug}`}
-                        className="group block"
-                        data-cursor-label="View project"
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="flex flex-wrap items-baseline gap-x-5 md:flex-nowrap">
+                      <span // `transition-[translate]`, not `transform`: Tailwind v4 compiles
+                        // `translate-x-*` to the standalone `translate` property, so a
+                        // transition naming `transform` matches nothing and the shift
+                        // snaps. The face swap is deliberately not in the transition —
+                        // `font-style` and `font-family` are not animatable, and the
+                        // reference's swap is instant too.
+                        className="font-heading text-[clamp(2.25rem,7vw,5.5rem)] leading-[1.05] tracking-tight transition-[translate] duration-300 ease-out group-hover:translate-x-[0.6em] group-hover:italic group-hover:[font-family:var(--font-display-serif)] group-focus-visible:translate-x-[0.6em] group-focus-visible:italic group-focus-visible:[font-family:var(--font-display-serif)]"
                       >
-                        {/* aspect-[16/10] matches the real screenshots' own
-                            ~1.6 ratio (they're desktop captures) — the old
-                            4/3 was cropping a meaningful strip off every
-                            one. max-w-lg caps how large they're ever asked
-                            to render: the source screenshots read soft
-                            past a few hundred px regardless of their large
-                            reported pixel dimensions, so displaying them
-                            smaller (not fetching them smaller) is what
-                            actually keeps them looking sharp — the wider
-                            they're stretched, the more that softness shows. */}
-                        <div className="relative aspect-16/10 w-full max-w-lg overflow-hidden rounded-xl">
-                          <CoverArt
-                            {...project.cover}
-                            fallbackSeed={project.slug}
-                            sizes="(min-width: 768px) 32rem, 100vw"
-                            className="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                          />
-                          <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-black/10 dark:ring-white/10" />
-                        </div>
-                        <p className="mt-4 text-[11px] tracking-normal text-muted-foreground lowercase">
-                          {project.category} — {project.year}
-                          {project.live === false ? " — no longer live" : ""}
-                        </p>
-                        <h3 className="mt-1 font-heading text-2xl transition-colors group-hover:text-cta md:text-3xl">
-                          {project.title}
-                        </h3>
-                        <p className="mt-2 line-clamp-2 max-w-sm text-sm text-muted-foreground">
-                          {project.summary}
-                        </p>
-                      </Link>
-                    </div>
-                  </RevealOnScroll>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+                        {project.title}
+                      </span>
+
+                      <span className="text-xs sm:text-[11px] tracking-normal text-muted-foreground lowercase md:ml-auto md:pl-8">
+                        {project.category}, {project.year}
+                        {project.live === false ? ", no longer live" : ""}
+                      </span>
+                    </span>
+                  </Link>
+                </RevealOnScroll>
+              </li>
+            );
+          })}
+        </ol>
       </div>
+
+      {pointerFine ? <PreviewPanel project={active} /> : null}
     </section>
   );
 }

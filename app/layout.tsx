@@ -11,9 +11,8 @@ import { DarkSectionProvider } from "@/components/chrome/DarkSectionProvider";
 import { Footer } from "@/components/chrome/Footer";
 import { GoogleTranslateWidget } from "@/components/chrome/GoogleTranslateWidget";
 import { PageTransition } from "@/components/chrome/PageTransition";
-import { Preloader } from "@/components/chrome/Preloader";
 import { SmoothScrollProvider } from "@/components/chrome/SmoothScrollProvider";
-import CustomCursor from "@/components/work-detail/CustomCursor";
+import { CanvasCursor } from "@/components/chrome/CanvasCursor";
 
 // Base typeface — a geometric sans, used for both display and body text
 // (see globals.css: --font-heading and --font-sans both resolve to this).
@@ -41,7 +40,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} — ${siteConfig.role}`,
+    default: `${siteConfig.name} · ${siteConfig.role}`,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -67,12 +66,11 @@ export default function RootLayout({
     >
       <body className="min-h-full">
         <GoogleTranslateWidget />
-        <Preloader />
         <MotionConfig reducedMotion="user">
           <SmoothScrollProvider>
             <DarkSectionProvider>
               <Header />
-              <CustomCursor />
+              <CanvasCursor />
               <main className="relative z-10 min-h-dvh bg-inherit pt-16">
                 <PageTransition>{children}</PageTransition>
               </main>

@@ -134,8 +134,8 @@ export function BugSquashGame() {
   return (
     <div className="mx-auto max-w-2xl">
       <div className="flex items-center justify-between text-xs tracking-normal text-muted-foreground lowercase">
-        <span>score — {score}</span>
-        {best !== null ? <span>best — {best}</span> : null}
+        <span>score: {score}</span>
+        {best !== null ? <span>best: {best}</span> : null}
         <span>{state === "playing" ? `${timeLeft}s` : `${GAME_DURATION}s`}</span>
       </div>
 

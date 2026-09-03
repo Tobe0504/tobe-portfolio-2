@@ -90,7 +90,7 @@ export function MenuToggle({ nav, social, dark = false }: MenuToggleProps) {
           <a
             key={item.href}
             href={item.href}
-            className="transition-colors hover:text-cta"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-cta sm:min-h-0"
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel={item.href.startsWith("http") ? "noreferrer" : undefined}
           >
@@ -109,7 +109,7 @@ export function MenuToggle({ nav, social, dark = false }: MenuToggleProps) {
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
         className={cn(
-          "inline-flex items-center rounded-full px-6 py-2 text-sm lowercase transition-transform duration-300 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50",
+          "inline-flex min-h-11 items-center rounded-full px-6 text-sm lowercase transition-transform duration-300 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/50",
           dark && !open ? "bg-background text-foreground" : "bg-foreground text-background",
         )}
       >

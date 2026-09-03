@@ -38,7 +38,7 @@ export const galleryItems: GalleryItem[] = [
     featured: true,
     image: {
       src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930852/MUSE_Part_2_-_Starring_Victoria_e8zlom.jpg",
-      alt: "MUSE, part 2 — starring Victoria",
+      alt: "MUSE, part 2, starring Victoria",
     },
   },
   {

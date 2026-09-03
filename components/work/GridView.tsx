@@ -50,19 +50,19 @@ export function GridView({ projects }: { projects: Project[] }) {
               </ParallaxFrame>
 
               <div className="mt-4 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5">
-                <span className="self-start text-[11px] tracking-normal text-muted-foreground lowercase">
+                <span className="self-start text-xs sm:text-[11px] tracking-normal text-muted-foreground lowercase">
                   work
                 </span>
                 <span className="font-heading text-lg leading-snug transition-colors group-hover:text-cta">
                   {project.title}
                 </span>
 
-                <span className="self-start text-[11px] tracking-normal text-muted-foreground lowercase">
+                <span className="self-start text-xs sm:text-[11px] tracking-normal text-muted-foreground lowercase">
                   info
                 </span>
                 <span className="text-sm text-muted-foreground">
-                  {project.category} — {project.client}, {project.year}
-                  {project.live === false ? " — no longer live" : ""}
+                  {project.category}, {project.client}, {project.year}
+                  {project.live === false ? ", no longer live" : ""}
                 </span>
               </div>
             </Link>

@@ -68,7 +68,7 @@ export function Moodboard({ items }: MoodboardProps) {
 
   if (reducedMotion) {
     return (
-      <section className="border-t border-border px-6 py-24 md:px-10">
+      <section className="border-t border-border px-6 py-16 md:px-10 md:py-24">
         <MoodboardHeading />
         <div className="mt-14 flex flex-wrap items-start justify-center gap-6">
           {items.map((item, i) => (

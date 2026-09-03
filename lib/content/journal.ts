@@ -1,229 +1,197 @@
 import type { JournalPost } from "./types";
 
-// coverImage below is a placeholder — reusing existing gallery photos so the
-// /journal grid has something real to lay out while the page gets built.
-// Swap each one for a real cover shot per entry whenever they're ready.
+// One entry, deliberately. This is a personal notebook rather than a
+// publishing schedule — the listing and the detail page both handle a single
+// post, so there is nothing to pad out until the next one is written.
 export const journalPosts: JournalPost[] = [
   {
-    slug: "constraints-are-a-gift",
-    title: "Constraints are a gift, not an obstacle",
-    date: "2026-06-27",
-    excerpt: "The brief that scares you a little is usually the good one.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930852/aiart___%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B8%CC%86%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82___%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE%D0%B8%D0%B8___%D0%BD%D0%B5%D0%B8%CC%86%D1%80%D0%BE%D0%B0%D1%80%D1%82___aiartwork___digitalart___aiartist___%D0%BD%D0%B5%D0%B8%CC%86%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C___%D0%BD%D0%B5%D0%B8%CC%86%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8___%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE___artificialintell_lnhsam.jpg",
-      alt: "AI-generated artwork",
-    },
-    tags: ["Process"],
-    readingTime: 4,
-    body: [
-      {
-        type: "paragraph",
-        text: "The briefs I turn down aren't the hard ones. They're the open ones — \"do whatever you think is best,\" no budget ceiling, no launch date. Without a wall to push against there's nothing to push against, and the work drifts for weeks before it finds a shape.",
-      },
-      {
-        type: "paragraph",
-        text: "A real constraint does the opposite. Three colors, one typeface, a launch date that can't move — every option that isn't survivable gets deleted before you've wasted a day on it. What's left is smaller, and it's almost always better than what six unconstrained weeks would have produced.",
-      },
-      {
-        type: "quote",
-        text: "Give me a blank page and I'll stall. Give me a blank page and a deadline and I'll ship.",
-      },
-    ],
-  },
-  {
-    slug: "on-restraint",
-    title: "On restraint",
-    date: "2026-05-14",
-    excerpt: "Most interfaces don't fail from doing too little.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930853/Wallpaper_wulsny.jpg",
-      alt: "A saved wallpaper",
-    },
-    tags: ["Process"],
-    readingTime: 4,
-    body: [
-      {
-        type: "paragraph",
-        text: "Every critique I've sat through where a screen felt \"unfinished\" turned out, on closer look, to be a screen that was actually just quiet. Quiet gets mistaken for incomplete constantly, and the fix people reach for is always the same: add a badge, add a gradient, add a card around the thing that was already fine on its own.",
-      },
-      {
-        type: "paragraph",
-        text: "The restraint isn't the absence of a decision. It's a decision, made early, to spend the page's attention on one thing instead of six. You can tell within the first five minutes of a review whether a team made that decision on purpose or arrived at it by running out of time.",
-      },
-      {
-        type: "quote",
-        text: "What is this competing with? If the honest answer is \"the thing I actually want someone to look at,\" it doesn't go in.",
-      },
-    ],
-  },
-  {
-    slug: "type-pairing-notes",
-    title: "Notes on pairing a serif with a mono",
-    date: "2026-03-02",
+    slug: "the-bar-might-be-in-hell",
+    title: "The bar might be in hell",
+    date: "2026-09-03",
     excerpt:
-      "A serif carries the voice. A mono carries the facts. Nothing else needs to be in the room.",
+      "Somewhere between then and now, the bar fell. Nobody announced it.",
     coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930851/__35_kszjuc.jpg",
-      alt: "Pop-art sculpture illustration with \"He ART\" text",
+      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1788434897/__27_k0xmzs.jpg",
+      alt: "Illustrated portrait of friends laughing together",
     },
-    tags: ["Typography"],
-    readingTime: 6,
-    body: [
-      {
-        type: "paragraph",
-        text: "The pairing I keep coming back to isn't serif-plus-sans, it's serif-plus-mono. A sans body face tries to be neutral and mostly reads as a compromise between the display face and nothing. A mono doesn't compete with the serif at all — it's doing an entirely different job: dates, credits, coordinates, the parts of a page that are true rather than felt.",
-      },
-      {
-        type: "paragraph",
-        text: "The trap is using the mono everywhere technical shows up, out of habit, instead of asking whether that particular fact wants to feel precise or wants to feel human. A byline in mono reads like a database record. A byline in the body serif reads like it was written by a person. Most of the time I want the second one.",
-      },
-    ],
-  },
-  {
-    slug: "designing-for-scroll",
-    title: "Designing for scroll, not for screens",
-    date: "2026-01-19",
-    excerpt: "A page isn't a canvas you fill. It's a sequence you spend.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930851/__31_x8dsdg.jpg",
-      alt: "Abstract textured portrait in paint",
-    },
-    tags: ["Motion", "Process"],
+    tags: ["Life"],
     readingTime: 5,
     body: [
       {
         type: "paragraph",
-        text: "I used to design pages the way you'd lay out a poster — figure out the composition, then figure out how it breaks across a viewport. That produces pages that look considered in a screenshot and feel arbitrary in a browser, because the screenshot was never the medium.",
+        text: "I was reading about ordinary life recently. Not history history. Just people. The boring parts. How they married. How they raised children. How friendships lasted. The things nobody writes movies about because they're too ordinary.",
       },
       {
         type: "paragraph",
-        text: "Scroll has a rhythm the way music does: a held beat, a release, a pause before the next idea. Once I started storyboarding sections as beats instead of blocks, the transitions stopped needing to be clever — most of them could just be a fade and a bit of patience, because the sequence itself was doing the work.",
-      },
-    ],
-  },
-  {
-    slug: "boring-technology",
-    title: "The case for boring technology",
-    date: "2025-10-05",
-    excerpt: "Save the novelty budget for the one thing the project is actually about.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930852/Alma-Tameda_1_ygbz5z.jpg",
-      alt: "Alma Tameda, part 1",
-    },
-    tags: ["Studio"],
-    readingTime: 3,
-    body: [
-      {
-        type: "paragraph",
-        text: "Every stack has a novelty budget, whether anyone names it or not — a limited amount of \"let's try the new thing\" the project can absorb before the risk stops being interesting and starts being a liability. Spend it on the part of the product that's actually new. Everywhere else, pick the boring option and move on.",
+        text: "Somewhere in the middle of all that, I started laughing. Not because life back then was better. I'm sure it wasn't. Every generation gets its own premium package of problems. It was because I kept stumbling on things that used to be normal and reading them like plot twists.",
       },
       {
         type: "paragraph",
-        text: "Boring means documented, means the error messages are googleable, means the person debugging it at 11pm six months from now — probably me — isn't also relearning a framework. None of that is glamorous. All of it is why the interesting part of the project got built at all.",
-      },
-    ],
-  },
-  {
-    slug: "a-year-of-client-work",
-    title: "A year of client work, in six numbers",
-    date: "2025-11-08",
-    excerpt: "The studio's first full year, accounted for honestly.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930851/__29_sgsxhc.jpg",
-      alt: "Expressionist skull-figure painting with numbers and sketches",
-    },
-    tags: ["Studio"],
-    readingTime: 3,
-    body: [
-      {
-        type: "paragraph",
-        text: "Six projects shipped, one turned down after a week of discovery once it became clear the brief and the budget weren't describing the same project, and exactly zero all-nighters — which I'm more proud of than any single deliverable this year.",
-      },
-      {
-        type: "list",
-        items: [
-          "Smaller scopes",
-          "Longer runways",
-          "Fewer simultaneous clients",
-        ],
+        text: "People stayed married. Neighbours knew your name. Friendships somehow survived not speaking every day.",
       },
       {
         type: "paragraph",
-        text: "Everything good this year came from having enough time to throw away the first version.",
-      },
-    ],
-  },
-  {
-    slug: "good-crit",
-    title: "What a good critique actually sounds like",
-    date: "2025-08-01",
-    excerpt: "Not \"I don't love it.\" Something you can act on before lunch.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930851/__30_ylujkt.jpg",
-      alt: "High-contrast illustration of a laughing figure",
-    },
-    tags: ["Process"],
-    readingTime: 4,
-    body: [
-      {
-        type: "paragraph",
-        text: "\"I don't love it\" has never once told me what to change. It's a real reaction, but it's the reviewer's job to keep going past it — what specifically isn't landing, and what would landing look like. Stopping at the feeling is the critique equivalent of a bug report that just says \"it's broken.\"",
+        text: "Imagine.",
       },
       {
         type: "paragraph",
-        text: "The best reviewers I've worked with point at a specific element and say what they'd try instead, even a rough guess. It's easier to react to a wrong suggestion than to an open-ended feeling, and a wrong suggestion still moves the work forward — you find out why it's wrong, which is information you didn't have before.",
-      },
-      {
-        type: "list",
-        items: [
-          "Name the specific element, not the whole screen",
-          "Say what you'd try, even if it's wrong",
-          "End with something actionable before the meeting ends",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "why-i-still-sketch",
-    title: "Why I still sketch on paper first",
-    date: "2025-09-22",
-    excerpt: "Not for the aesthetic. For the friction.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930852/__33_lezxqz.jpg",
-      alt: "Artistic mood-board wallpaper with paintbrushes and art supplies",
-    },
-    tags: ["Process"],
-    readingTime: 4,
-    body: [
-      {
-        type: "paragraph",
-        text: "Paper is slow in exactly the way that's useful early on — you can't drag a component from a library, so you're forced to decide what the thing actually is before you decide what it looks like. Every idea I've had that survived to production started as a bad drawing I was a little embarrassed to show anyone.",
+        text: "Mind you, I am very much part of these issues. This is probably rage bait. A report card for how well we the destroyers of societal morals have done so far.",
       },
       {
         type: "paragraph",
-        text: "The tools come back in once the shape is right. But the shape has to be right first, and software is too accommodating to tell you when it isn't.",
-      },
-    ],
-  },
-  {
-    slug: "naming-things",
-    title: "Naming things is a design problem",
-    date: "2025-07-10",
-    excerpt: "A wrong name costs more than a wrong color ever will.",
-    coverImage: {
-      src: "https://res.cloudinary.com/dryjxk5jw/image/upload/v1785930853/Stories_worth_letting_the_lights_shine_through_mpnmzo.jpg",
-      alt: "Stories worth letting the lights shine through",
-    },
-    tags: ["Typography"],
-    readingTime: 3,
-    body: [
-      {
-        type: "paragraph",
-        text: "A wrong color gets fixed in an afternoon and nobody remembers it happened. A wrong name for a button, a state, a section of navigation gets typed into commit messages, ticket titles, and Slack threads for years, and every one of those instances is a small tax on whoever reads it next.",
+        text: "Somewhere between then and now, the bar fell. Nobody announced it. One day we all just looked down and thought, “Fair enough.”",
       },
       {
         type: "paragraph",
-        text: "The naming pass I trust least is the one done alone at the end, once the feature already works and shipping is the only thing left. Naming wants to happen earlier, out loud, with someone who'll say \"wait, what does that actually mean\" before it's load-bearing in forty files.",
+        text: "Now everything feels negotiable. Love is negotiable. Friendships, negotiable. Showing up is negotiable. Replying to messages? That's practically an act of charity.",
+      },
+      {
+        type: "paragraph",
+        text: "We've become very good at almost. Almost committing. Almost calling. Almost visiting. It's like we're all permanently buffering.",
+      },
+      {
+        type: "paragraph",
+        text: "Situationships, whoever came up with it is just great. It's a relationship that refuses to admit it's a relationship.",
+      },
+      {
+        type: "paragraph",
+        text: "Like somebody filled out all the forms but refused to sign at the bottom.",
+      },
+      {
+        type: "paragraph",
+        text: "“We're just seeing where it goes.” Fair enough.",
+      },
+      {
+        type: "paragraph",
+        text: "But it's been going for nine months now. At this point it should've arrived somewhere.",
+      },
+      {
+        type: "paragraph",
+        text: "I understand why, though. Love has become expensive. Not financially. Emotionally.",
+      },
+      {
+        type: "paragraph",
+        text: "Everybody knows somebody who gave everything they had to one person and got a motivational quote in return. So now we negotiate with our hearts. No labels. No expectations. No pressure. If anything goes wrong, everybody can pretend nobody was really there. The bar quietly moves again.",
+      },
+      {
+        type: "paragraph",
+        text: "And friendship. Friendship is interesting.",
+      },
+      {
+        type: "paragraph",
+        text: "I miss when friends just existed. Nobody had to schedule a phone call three weeks in advance. You'd knock on someone's gate. If they were home, fantastic. If they weren't, you came back later. Simple.",
+      },
+      {
+        type: "paragraph",
+        text: "Now I sometimes have to text people before I call them. To ask if I can call them. To ask if they're free to answer the call I'm asking permission to make. Communication has somehow developed a prequel.",
+      },
+      {
+        type: "paragraph",
+        text: "Then there's social media. I have a complicated relationship with it because, honestly, I enjoy it. I've laughed too much online to become one of those “delete Instagram and go outside” people. Besides, half of us met genuinely wonderful people because of the internet.",
+      },
+      {
+        type: "paragraph",
+        text: "The internet isn't the villain. It's just loud.",
+      },
+      {
+        type: "paragraph",
+        text: "Everybody is performing a version of themselves. Some are performing not caring. The funny thing about performing not caring is that it usually requires an audience.",
+      },
+      {
+        type: "paragraph",
+        text: "Whatever happened to just being quiet?",
+      },
+      {
+        type: "paragraph",
+        text: "The phone itself is a miracle. A ridiculous miracle. I can transfer money while standing in traffic. Watch a football match from another continent. Order food. Read a book. Argue with strangers about whether jollof should have green peas (I still think it shouldn't).",
+      },
+      {
+        type: "paragraph",
+        text: "If you explained smartphones to someone in 1987, they'd assume you were either a prophet or a scammer.",
+      },
+      {
+        type: "paragraph",
+        text: "But most miracles ask for something in return. This one asked for our attention. Every app believes it's the main character. Every notification believes it deserves urgency. Every vibration says, “Look at me.”",
+      },
+      {
+        type: "paragraph",
+        text: "No wonder silence feels unfamiliar now.",
+      },
+      {
+        type: "paragraph",
+        text: "We've outsourced boredom. And I think boredom was doing more work than we gave it credit for. Bored people started hobbies. Bored people learnt instruments. Bored people stared out of windows long enough to have ideas. Now boredom lasts about six seconds before somebody sends you a reel.",
+      },
+      {
+        type: "paragraph",
+        text: "I also think we've become strangely afraid of looking eager. Nobody wants to reply too quickly. Nobody wants to text first. Nobody wants to say, “I miss you.” Everybody wants to be desired. Nobody wants to look like they're doing the desiring.",
+      },
+      {
+        type: "paragraph",
+        text: "It's a strange game. One where everybody loses by trying not to lose.",
+      },
+      {
+        type: "paragraph",
+        text: "Maybe that's why “nonchalant” became a compliment. Imagine telling our grandparents you met somebody wonderful but you're intentionally acting uninterested. They'd probably ask if you were feeling alright.",
+      },
+      {
+        type: "paragraph",
+        text: "The funny thing is, I don't think we're becoming colder. I think we're becoming more careful.",
+      },
+      {
+        type: "paragraph",
+        text: "There's a difference.",
+      },
+      {
+        type: "paragraph",
+        text: "Careful people double-check doors before sleeping. Careful people save receipts. Careful people don't jump into deep water. Somewhere along the line we started treating love the same way. We wear emotional helmets, reflective jackets.",
+      },
+      {
+        type: "paragraph",
+        text: "Which makes sense. Life has a way of teaching caution.",
+      },
+      {
+        type: "paragraph",
+        text: "But it also means some of us haven't felt the wind in years.",
+      },
+      {
+        type: "paragraph",
+        text: "Especially here. We're Nigerians. We've made an art form out of adjusting. Power goes out? We adjust. Fuel price goes up? We adjust. Rain starts in the middle of traffic? We adjust. Somebody says, “I'm five minutes away,” and they've just entered the bathroom? We somehow adjust.",
+      },
+      {
+        type: "paragraph",
+        text: "It's one of our greatest strengths. It's also why we have to be careful. Because if you adjust long enough, you stop asking whether something is good. You only ask whether it's normal.",
+      },
+      {
+        type: "quote",
+        text: "Those aren't the same thing. Common isn't the same as normal. It never was.",
+      },
+      {
+        type: "paragraph",
+        text: "Anyways please listen to me.",
+      },
+      {
+        type: "paragraph",
+        text: "Maybe nothing changes after this. Maybe we all wake up tomorrow and continue buffering through life. Or maybe one person replies to the message they've been leaving unopened. Maybe someone visits instead of saying, “We should link up soon.” Maybe someone says exactly what they mean instead of hoping the other person guesses.",
+      },
+      {
+        type: "paragraph",
+        text: "Small things. That's usually how life changes anyway. Not all at once. Just one ordinary decision at a time.",
+      },
+      {
+        type: "paragraph",
+        text: "The bar might be in hell. I still believe that.",
+      },
+      {
+        type: "paragraph",
+        text: "But maybe it doesn't get raised by grand speeches or perfect people. Maybe it comes back up every time someone chooses sincerity over strategy. Every time someone stays. Every time someone forgives. Every time someone loves without trying to look cool while doing it.",
+      },
+      {
+        type: "paragraph",
+        text: "I'm probably overthinking it.",
+      },
+      {
+        type: "paragraph",
+        text: "Goodnight. Or good morning. Whichever one finds you first.",
       },
     ],
   },

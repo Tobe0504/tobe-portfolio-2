@@ -44,7 +44,7 @@ export function ContactCTA() {
     >
       <a
         href={`mailto:${siteConfig.email}`}
-        className="px-6 text-center font-heading text-4xl text-white transition-colors hover:text-cta sm:text-6xl md:text-7xl block"
+        className="block px-6 py-2 text-center font-heading text-4xl break-words text-white transition-colors hover:text-cta sm:text-6xl md:text-7xl"
       >
         {siteConfig.email}
       </a>
@@ -53,7 +53,7 @@ export function ContactCTA() {
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-xs text-white lowercase transition-[border-color,transform] duration-150 hover:border-white/50 active:scale-[0.97]"
+          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/25 px-5 text-xs text-white lowercase transition-[border-color,transform] duration-150 hover:border-white/50 active:scale-[0.97]"
         >
           {copied ? (
             <Check className="size-3.5" />
@@ -66,7 +66,7 @@ export function ContactCTA() {
         <a
           href={`mailto:${siteConfig.email}`}
           className={cn(
-            "inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-xs text-cta-foreground lowercase transition-transform duration-300 hover:scale-105 active:scale-95",
+            "inline-flex min-h-11 items-center gap-2 rounded-full bg-cta px-5 text-xs text-cta-foreground lowercase transition-transform duration-300 hover:scale-105 active:scale-95",
           )}
         >
           <Mail className="size-3.5" />

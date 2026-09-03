@@ -25,7 +25,7 @@ function NavCard({
         <CoverArt {...project.cover} fallbackSeed={project.slug} />
       </div>
       <div>
-        <p className="text-[11px] tracking-normal lowercase opacity-50">
+        <p className="text-xs sm:text-[11px] tracking-normal lowercase opacity-50">
           {label}
         </p>
         <p className="mt-1 font-heading text-2xl transition-colors group-hover:text-cta md:text-3xl">

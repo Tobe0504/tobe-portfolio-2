@@ -41,6 +41,11 @@ export function Header() {
 
   return (
     <header
+      // Hook for Home's load intro (HeroIntro), which drops the header in
+      // from above as the final beat and needs to park it off-screen before
+      // that — and for the CSS in globals.css that holds it parked until
+      // GSAP has hydrated and taken over.
+      data-site-header
       className={cn(
         "fixed inset-x-0 top-0 z-50",
         scrolled &&
@@ -54,10 +59,10 @@ export function Header() {
           <Link
             href="/"
             className={cn(
-              "flex items-center gap-1 transition-opacity hover:opacity-70",
+              "flex min-h-11 items-center gap-1 transition-opacity hover:opacity-70",
               hardDark ? "text-background" : "text-(--scroll-fg)",
             )}
-            aria-label={`${siteConfig.name} — home`}
+            aria-label={`${siteConfig.name}, home`}
           >
             <SignatureMark className="h-10 w-10" />
             <span className="text-lg font-medium tracking-normal lowercase">
@@ -79,7 +84,7 @@ export function Header() {
           <Link
             href="/contact"
             className={cn(
-              "hidden items-center rounded-full border px-4 py-1.5 text-xs tracking-normal lowercase transition-[color,border-color,transform] duration-150 hover:border-cta hover:text-cta active:scale-[0.97] sm:inline-flex",
+              "hidden min-h-11 items-center rounded-full border px-4 text-xs tracking-normal lowercase transition-[color,border-color,transform] duration-150 hover:border-cta hover:text-cta active:scale-[0.97] sm:inline-flex",
               dark
                 ? "border-background/25 text-background/70"
                 : "border-border text-muted-foreground",

@@ -9,7 +9,7 @@ function StatusPill({ status }: { status: PersonalProject["status"] }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] tracking-normal lowercase",
+        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs sm:text-[10px] tracking-normal lowercase",
         status === "in progress" && "border-cta/40 text-cta",
         status === "shipped" && "border-border text-muted-foreground",
         status === "paused" && "border-border text-muted-foreground/60",
@@ -41,7 +41,7 @@ export function PlaygroundListing({ projects }: { projects: PersonalProject[] })
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border px-2.5 py-0.5 text-[10px] tracking-normal text-muted-foreground lowercase"
+                    className="rounded-full border border-border px-2.5 py-0.5 text-xs sm:text-[10px] tracking-normal text-muted-foreground lowercase"
                   >
                     {tag}
                   </span>

@@ -31,7 +31,7 @@ function JournalBlockView({ block, index }: { block: JournalBlock; index: number
           {block.text}
           {block.cite ? (
             <cite className="mt-3 block text-sm font-sans text-muted-foreground not-italic">
-              — {block.cite}
+              {block.cite}
             </cite>
           ) : null}
         </blockquote>
@@ -103,7 +103,7 @@ export function JournalPostView({ post }: { post: JournalPost }) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-border px-3 py-1 text-[10px] tracking-normal text-muted-foreground lowercase"
+                className="rounded-full border border-border px-3 py-1 text-xs sm:text-[10px] tracking-normal text-muted-foreground lowercase"
               >
                 {tag}
               </span>

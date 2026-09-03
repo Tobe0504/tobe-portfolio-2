@@ -99,7 +99,7 @@ export function LanguageSwitcher({ dark = false }: LanguageSwitcherProps) {
         aria-expanded={open}
         aria-label="Change language"
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs tracking-normal lowercase transition-[color,border-color,transform] duration-150 hover:border-cta hover:text-cta active:scale-[0.97]",
+          "inline-flex min-h-11 items-center gap-1.5 rounded-full border px-3 text-xs tracking-normal lowercase transition-[color,border-color,transform] duration-150 hover:border-cta hover:text-cta active:scale-[0.97]",
           dark
             ? "border-background/25 text-background/70"
             : "border-border text-muted-foreground",

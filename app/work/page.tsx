@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import { WorkApproach } from "@/components/work/WorkApproach";
 import { WorkHero } from "@/components/work/WorkHero";
 import { WorkImagePair } from "@/components/work/WorkImagePair";
+import { PlaygroundBridge } from "@/components/work/PlaygroundBridge";
 import { WorkListing } from "@/components/work/WorkListing";
 import { WorkScrollReveal } from "@/components/work/WorkScrollReveal";
-import { getProjects } from "@/lib/content";
+import { getPersonalProjects, getProjects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -23,7 +24,10 @@ const HERO_LABELS = [
 ];
 
 export default async function WorkPage() {
-  const projects = await getProjects();
+  const [projects, personal] = await Promise.all([
+    getProjects(),
+    getPersonalProjects(),
+  ]);
   return (
     <>
       <WorkHero
@@ -31,9 +35,11 @@ export default async function WorkPage() {
         statement="Product. Engineering. Every project run as one continuous practice."
       />
 
-      <WorkScrollReveal text="A software practice built to handle the whole surface of a product, from the first wireframe to the system that keeps running after launch — not a hand-off between specialists, one person carrying the thread all the way through." />
+      <WorkScrollReveal text="A software practice built to handle the whole surface of a product, from the first wireframe to the system that keeps running after launch, not a hand-off between specialists, one person carrying the thread all the way through." />
 
       <WorkListing projects={projects} />
+
+      <PlaygroundBridge projects={personal} />
 
       <WorkImagePair />
 

@@ -9,7 +9,7 @@ const STEPS = [
   {
     number: "01",
     title: "Discovery",
-    body: "A week or two spent with the actual constraints — the existing codebase, the timeline, the traffic it needs to survive. Most bad scopes get fixed here, before anything gets built.",
+    body: "A week or two spent with the actual constraints: the existing codebase, the timeline, the traffic it needs to survive. Most bad scopes get fixed here, before anything gets built.",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const STEPS = [
   {
     number: "03",
     title: "Build",
-    body: "The system gets built out across every surface it actually needs to hold up on — frontend, backend, and the edge cases in between, not just the happy path.",
+    body: "The system gets built out across every surface it actually needs to hold up on: frontend, backend, and the edge cases in between, not just the happy path.",
   },
   {
     number: "04",
@@ -31,7 +31,7 @@ const STEPS = [
 /** The one place a numbered sequence is used — this is a real, ordered process, not decoration. */
 export function ProcessAccordion() {
   return (
-    <section className="border-b border-border px-6 py-24 md:px-10">
+    <section className="border-b border-border px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-400">
         <p className="text-xs tracking-normal text-muted-foreground lowercase">
           How I work

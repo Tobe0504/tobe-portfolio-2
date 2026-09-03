@@ -20,13 +20,15 @@ export function StatusBadges() {
     return () => clearInterval(id);
   }, []);
 
+  // Bare text, no box: this is the live line of the hero's bottom strip (the
+  // slot the reference fills with the currently-playing track), stacked under
+  // a dimmer role label, so size, colour and spacing all belong to that strip
+  // rather than to this component.
   return (
-    <div className="relative z-10 flex items-center justify-between pt-5 text-[11px] tracking-normal text-muted-foreground lowercase">
-      <span>
-        {siteConfig.location}
-        {time ? ` — ${time}` : ""}
-      </span>
-    </div>
+    <span>
+      {siteConfig.location}
+      {time ? ` · ${time}` : ""}
+    </span>
   );
 }
 
