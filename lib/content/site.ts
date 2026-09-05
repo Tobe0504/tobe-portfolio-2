@@ -23,4 +23,20 @@ export const siteConfig: SiteConfig = {
     { label: "LinkedIn", href: "https://linkedin.com/in/tobenna-ezimorah" },
     { label: "X", href: "https://x.com/volfgng" },
   ],
+  // Hosted on Google Drive. These MUST be shared as "Anyone with the link ->
+  // Viewer"; on a restricted file Drive serves a Google sign-in page instead
+  // of the document, so a visitor with no Google account sees a login wall
+  // where the resume should be, and it fails silently from this side.
+  documents: [
+    {
+      label: "Resume",
+      description: "One page. Roles, stack, and what each one shipped.",
+      href: "/resume.pdf",
+    },
+    {
+      label: "Portfolio",
+      description: "Seven pages. Case studies, personal projects, contact.",
+      href: "/portfolio.pdf",
+    },
+  ],
 };

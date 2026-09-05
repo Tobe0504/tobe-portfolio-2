@@ -44,6 +44,25 @@ export function Footer() {
               ))}
             </div>
             <div className="flex flex-col gap-0 sm:gap-2">
+              {/* Third column rather than an extra row in Connect: a resume is
+                  not a social profile, and burying it under the same heading
+                  is how it stops getting found. */}
+              <span className="text-xs sm:text-[11px] tracking-normal text-background/50 lowercase">
+                Documents
+              </span>
+              {siteConfig.documents.map((doc) => (
+                <a
+                  key={doc.href}
+                  href={doc.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex min-h-11 items-center text-sm transition-colors hover:text-cta sm:min-h-0"
+                >
+                  {doc.label}
+                </a>
+              ))}
+            </div>
+            <div className="flex flex-col gap-0 sm:gap-2">
               <span className="text-xs sm:text-[11px] tracking-normal text-background/50 lowercase">
                 Connect
               </span>

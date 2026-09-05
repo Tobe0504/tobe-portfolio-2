@@ -122,6 +122,14 @@ export interface SocialLink {
   href: string;
 }
 
+/** A downloadable document offered to visitors (resume, portfolio PDF). */
+export interface SiteDocument {
+  label: string;
+  /** One line saying what it is, shown beside the link on /contact. */
+  description: string;
+  href: string;
+}
+
 export interface SiteConfig {
   name: string;
   initials: string;
@@ -132,4 +140,5 @@ export interface SiteConfig {
   location: string;
   nav: NavItem[];
   social: SocialLink[];
+  documents: SiteDocument[];
 }

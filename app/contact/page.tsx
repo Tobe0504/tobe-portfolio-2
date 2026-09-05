@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
 import { ContactCTA } from "@/components/contact/ContactCTA";
+import { DocumentLinks } from "@/components/contact/DocumentLinks";
 import { QuickFacts } from "@/components/contact/QuickFacts";
 import { SocialLinks } from "@/components/contact/SocialLinks";
 import { Highlight } from "@/components/shared/Highlight";
@@ -41,6 +42,19 @@ export default function ContactPage() {
         <div className="mx-auto max-w-400">
           <RevealOnScroll>
             <QuickFacts />
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-400">
+          <RevealOnScroll>
+            <p className="text-xs tracking-normal text-muted-foreground lowercase">
+              Read first
+            </p>
+            <div className="mt-6">
+              <DocumentLinks />
+            </div>
           </RevealOnScroll>
         </div>
       </section>
