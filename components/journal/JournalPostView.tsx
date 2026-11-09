@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { JournalFigure } from "@/components/journal/JournalFigure";
 import type { JournalBlock, JournalPost } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -61,6 +63,23 @@ function JournalBlockView({ block, index }: { block: JournalBlock; index: number
           </div>
           {block.caption ? (
             <figcaption className="mt-2 text-xs tracking-normal text-muted-foreground lowercase">
+              {block.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
+    case "figure":
+      return (
+        <figure
+          className={cn(
+            "my-4",
+            block.wide &&
+              "relative left-1/2 w-[min(72rem,calc(100vw-3rem))] -translate-x-1/2",
+          )}
+        >
+          <JournalFigure id={block.figure} />
+          {block.caption ? (
+            <figcaption className="mt-3 text-xs leading-relaxed tracking-normal text-muted-foreground lowercase">
               {block.caption}
             </figcaption>
           ) : null}

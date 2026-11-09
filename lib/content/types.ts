@@ -64,7 +64,27 @@ export type JournalBlock =
   | { type: "heading"; text: string; level?: 2 | 3 }
   | { type: "image"; src: string; alt: string; caption?: string }
   | { type: "quote"; text: string; cite?: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | {
+      type: "figure";
+      figure: JournalFigureId;
+      caption?: string;
+      /** Breaks out of the reading column for figures that need the room. */
+      wide?: boolean;
+    };
+
+/** Interactive pieces a journal entry can embed. */
+export type JournalFigureId =
+  | "atlas-stats"
+  | "atlas-scorecard"
+  | "atlas-scorecard-tables"
+  | "atlas-outlook"
+  | "atlas-map"
+  | "atlas-national"
+  | "atlas-horizon"
+  | "atlas-models"
+  | "atlas-drivers"
+  | "atlas-contagion";
 
 export interface JournalPost {
   slug: string;
