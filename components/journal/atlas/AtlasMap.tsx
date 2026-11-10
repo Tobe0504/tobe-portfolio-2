@@ -66,12 +66,12 @@ const SCALES = {
   y2026: {
     breaks: [1, 2, 5, 10, 20, 50],
     labels: ["0", "1", "2", "5", "10", "20", "50+"],
-    title: "events with identified actors, jan – sep 2026",
+    title: "fatal incidents incl. unknown gunmen, jan – sep 2026",
   },
   history: {
     breaks: [1, 3, 10, 30, 100, 300, 1000],
     labels: ["0", "1", "3", "10", "30", "100", "300", "1k"],
-    title: "fatal events, 2010–2025",
+    title: "fatal events in ucdp’s final data, 2010–2025",
   },
 };
 
@@ -163,7 +163,7 @@ export default function AtlasMap() {
     return lgas.map((l) => {
       if (view === "month") return shade(l.p[month], SCALES.month.breaks);
       if (view === "y2027") return shade(l.p27, SCALES.y2027.breaks);
-      if (view === "y2026") return shade(l.o26, SCALES.y2026.breaks);
+      if (view === "y2026") return shade(l.o26a, SCALES.y2026.breaks);
       if (view === "history") return shade(l.ev, SCALES.history.breaks);
       return LISA[l.li].color;
     });
@@ -191,9 +191,9 @@ export default function AtlasMap() {
       };
     if (view === "y2026")
       return {
-        rows: sort((l) => l.o26),
-        title: `Most recorded events in ${place}, Jan–Sep 2026`,
-        value: (l: Lga) => String(l.o26),
+        rows: sort((l) => l.o26a),
+        title: `Most incidents in ${place}, Jan–Sep 2026`,
+        value: (l: Lga) => String(l.o26a),
       };
     return {
       rows: sort((l) => l.ev),
@@ -338,7 +338,7 @@ export default function AtlasMap() {
                 <br />
                 {view === "month" ? `${pct(hovered.p[month])} chance` : null}
                 {view === "y2027" ? `${hovered.m27.toFixed(1)} expected events in 2027` : null}
-                {view === "y2026" ? `${hovered.o26} recorded, ${hovered.o26a} incl. unconfirmed` : null}
+                {view === "y2026" ? `${hovered.o26a} incidents, ${hovered.f26.toFixed(1)} forecast` : null}
                 {view === "history" ? `${hovered.ev.toLocaleString("en-GB")} events` : null}
                 {view === "hotspots" ? LISA[hovered.li].label : null}
               </ChartTip>
@@ -382,10 +382,10 @@ export default function AtlasMap() {
                   <dd>{pct(active.p[month])}</dd>
                   <dt className="text-muted-foreground">All of 2027</dt>
                   <dd>{pct(active.p27)}</dd>
-                  <dt className="text-muted-foreground">Recorded, Jan–Sep 2026</dt>
-                  <dd>{active.o26}</dd>
-                  <dt className="text-muted-foreground">Incl. unconfirmed</dt>
+                  <dt className="text-muted-foreground">Incidents, Jan–Sep 2026</dt>
                   <dd>{active.o26a}</dd>
+                  <dt className="text-muted-foreground">Forecast for them</dt>
+                  <dd>{active.f26.toFixed(1)}</dd>
                   <dt className="text-muted-foreground">Events, 2010–2025</dt>
                   <dd>{active.ev.toLocaleString("en-GB")}</dd>
                 </dl>

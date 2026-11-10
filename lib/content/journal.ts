@@ -9,13 +9,13 @@ export const journalPosts: JournalPost[] = [
     title: "Where violence comes next",
     date: "2026-11-09",
     excerpt:
-      "I rebuilt my statistics project into a forecast of fatal violence across Nigeria’s 774 local governments, marked it against 2026, and looked ahead to 2030.",
+      "I built a forecast of fatal violence across Nigeria’s 774 local governments, watched it miss 2026 badly, found out why, and rebuilt it. Here is where it now sees risk through 2030.",
     coverImage: {
       src: "/journal/where-violence-comes-next.jpg",
-      alt: "Map of Nigeria’s local government areas shaded by forecast risk for 2027, darkest in the north-east",
+      alt: "Map of Nigeria’s local government areas shaded by forecast risk for 2027, darkest in the north-east and Plateau",
     },
     tags: ["Data", "Nigeria"],
-    readingTime: 8,
+    readingTime: 9,
     body: [
       {
         type: "paragraph",
@@ -23,90 +23,94 @@ export const journalPosts: JournalPost[] = [
       },
       {
         type: "paragraph",
-        text: "I’ve been calling it my terrorism project, but political violence is the honest term. The data is the Uppsala Conflict Data Program’s event record, and it counts every clash with at least one death involving the state, an armed group or a communal militia, plus attacks on civilians. Boko Haram is in there. So are farmer–herder killings and fights between communities.",
+        text: "I’ve been calling it my terrorism project, but political violence is the honest term. The data is the Uppsala Conflict Data Program’s event record, and it counts every clash with at least one death involving the state, an armed group or a communal militia, plus attacks on civilians. Boko Haram is in there. So are farmer–herder killings, banditry and fights between communities.",
       },
       {
         type: "paragraph",
-        text: "It is easy to forget what the unit of measurement is on charts like these. Every event below is at least one person who didn’t come home. UCDP’s best estimate for Nigeria between 2010 and 2025 is about 61,800 deaths.",
+        text: "It is easy to forget what the unit of measurement is on charts like these. Every incident below is at least one person who didn’t come home. Even UCDP’s final data, which leaves many attacks out, puts deaths in Nigeria between 2010 and 2025 at about 61,800.",
       },
       {
         type: "figure",
         figure: "atlas-stats",
         wide: true,
       },
-      { type: "heading", text: "Checking my own forecast" },
+      { type: "heading", text: "The forecast that taught me something" },
       {
         type: "paragraph",
-        text: "A forecast is only worth something if you go back and mark it. In December 2025 the model forecast 454 fatal events for January to September 2026. UCDP has since recorded 493 with identified actors, 9% more, and every one of the nine months landed inside the forecast’s 80% range. Location held up too: the 10% of local governments it flagged held 63% of those events.",
+        text: "My first model forecast 454 fatal events for January to September 2026. When UCDP’s preliminary 2026 data came in, it recorded 1,155. The gap wasn’t mostly the model. It was the data I had trained it on.",
+      },
+      {
+        type: "paragraph",
+        text: "UCDP’s final releases drop incidents when it can’t identify the attackers. In Nigeria that is anywhere from 10% to 57% of incidents a year, and in 2026 it is 57%. Unknown gunmen are a large part of what violence here actually looks like, especially banditry in the north-west and the killings in Plateau. A model trained without them was forecasting a quieter country than the real one.",
+      },
+      {
+        type: "paragraph",
+        text: "So I rebuilt it on UCDP’s preliminary releases, which keep those incidents, for 2020 to 2026, with final data for 2010 to 2019 and a term in the model for the switch. Trained only on data to December 2025, the rebuilt model forecast 948 incidents for January to September 2026. That is still 22% short of what happened, but far closer, and it placed violence better: the 10% of local governments it flagged held 59% of incidents, against 48% for the first model.",
+      },
+      {
+        type: "paragraph",
+        text: "What it missed was timing. It expected violence to ease through 2026, as it had after earlier spikes. Instead it rose from April, so only 4 of the 9 months landed inside its 80% range. Plateau and the north-west banditry belt drove most of the gap.",
       },
       {
         type: "figure",
         figure: "atlas-scorecard",
-        caption: "Final 2026 figures should land between the solid and dashed lines once UCDP finishes checking its preliminary data.",
-      },
-      {
-        type: "paragraph",
-        text: "Then there is the part it got wrong. Including events UCDP is still checking, mostly attacks by unidentified gunmen, the preliminary total is 1,155. Those attacks surged in the north-west and Plateau, exactly where the model was weakest. Plateau was forecast 33 events and has 193 once unconfirmed ones are counted. Zamfara was forecast 5 and has 100. And while the model beat simply carrying last year forward on overall ranking, its top 5% caught 54% of events against 53% for that naive approach, which is close to a tie.",
+        caption: "Fatal incidents located to a local government, including unknown gunmen (UCDP preliminary data). Both forecasts were made with data to december 2025.",
       },
       {
         type: "figure",
         figure: "atlas-scorecard-tables",
         wide: true,
-        caption: "Forecast from december 2025. Recorded counts identified actors; the last column adds preliminary events still being checked.",
+        caption: "Forecast from december 2025. The first model was trained on final UCDP data without unknown gunmen; the missed places are local governments outside the forecast’s top 10%.",
       },
       { type: "heading", text: "The map" },
       {
         type: "paragraph",
-        text: "Each local government is shaded by its forecast chance of at least one fatal event. Drag the slider from October 2026 through December 2027, switch to what has actually happened in 2026, or pick a state to zoom in.",
+        text: "Each local government is shaded by its forecast chance of at least one fatal incident. Drag the slider from October 2026 through December 2027, switch to what has actually happened in 2026, or pick a state to zoom in.",
       },
       {
         type: "figure",
         figure: "atlas-map",
         wide: true,
-        caption: "Forecasts use events through september 2026. Local expected counts ran about 15% high in testing, so read them as a ranking.",
+        caption: "Forecasts use incidents through september 2026, including unknown gunmen. The 2010–2025 view uses ucdp’s final data, which leaves them out.",
       },
       {
         type: "paragraph",
-        text: "For 2027, 11 of the 15 local governments with the most expected events are in Borno, led by Gwoza, Bama and Konduga. Outside the north-east, Plateau’s Barkin Ladi and Mangu lead.",
+        text: "For 2027, the single highest-risk local government is Barkin Ladi in Plateau. Seven of the 15 with the most expected incidents are in Borno, led by Gwoza, Bama and Konduga, and five are in Plateau. The rest sit in the north-west banditry belt: Borgu and Mariga in Niger, and Tsafe in Zamfara.",
       },
       {
         type: "paragraph",
-        text: "One warning before you read too much into the pale parts of the map. The north-west looks calm, and it isn’t. Banditry there is barely captured by this dataset: Zamfara has 26 recorded events in 16 years. Low risk on this map can simply mean no data.",
+        text: "Counting unknown gunmen changed this map more than anything else I did. Under the first model, the north-west looked almost calm, because before 2020 the data barely records banditry. It still under-represents the region’s longer history, so pale areas there deserve some suspicion.",
       },
-      { type: "heading", text: "About 615 events in 2027, month by month" },
+      { type: "heading", text: "About 1,700 incidents in 2026" },
       {
         type: "paragraph",
-        text: "The monthly model expects violence to hold near today’s level: about 47 events with identified actors in November 2026, with an 80% range of 35 to 61, and 615 across 2027. If UCDP confirms many of 2026’s unidentified-attacker events, the true level, and these forecasts once refitted, will be higher.",
+        text: "Counting unknown gunmen, Nigeria recorded 1,155 fatal incidents in 2025 and is on course for about 1,700 in 2026. The model expects about 188 in November 2026, with an 80% range of 143 to 245, then a gradual easing through 2027 as the 2026 surge fades, the pattern seen after the 2021 and 2023 spikes. It under-called a rising trend this year, so I’d treat that easing with caution.",
       },
       {
         type: "figure",
         figure: "atlas-national",
         wide: true,
-        caption: "Monthly events with at least one death, located to a local government. The forecast is recalibrated by its 2022–2025 record; ranges show where past errors at the same lead time fell.",
+        caption: "Monthly fatal incidents including unknown gunmen, located to a local government. Bands show where 80% and 95% of past forecast errors at the same lead time fell.",
       },
       { type: "heading", text: "2027 to 2030" },
       {
         type: "paragraph",
-        text: "Past 2027 the question changes from where to how much, so I switched methods. For national totals, the rule that forecast past years best was the plainest one: the average of the last three years, corrected for its habit of running low. In backtests it missed by 14–18% on average, one to four years ahead.",
+        text: "2027 is the main forecast year: about 1,650 incidents, with an 80% range of roughly 1,000 to 2,850, close to 2026’s pace. That figure is the sum of the monthly model.",
       },
       {
         type: "paragraph",
-        text: "That rule puts 2027 at about 650 events, with an 80% range of 500 to 850, a little above the monthly model’s 615 because the two are built differently. From 2028 to 2030 it stays between roughly 650 and 690. For comparison, 2026 is on course for about 625: 493 recorded through September plus 132 forecast for the last quarter.",
-      },
-      {
-        type: "paragraph",
-        text: "Read that flat line carefully. It doesn’t mean things will stay the same. It means nothing I tested could see turning points years ahead, which is why the ranges stay this wide.",
+        text: "Beyond that, the model can’t see, so I use a plainer rule: the average of the last three years, corrected for its habit of running low. It puts 2028 to 2030 at about 1,200 incidents a year, with an 80% range of 700 to 2,050. That assumes violence partly settles back, as it did after earlier spikes. Yearly totals here have swung by up to half from one year to the next, and the rule has only a few years of this data to learn from, so treat those ranges as rough.",
       },
       {
         type: "figure",
         figure: "atlas-outlook",
         wide: true,
-        caption: "Identified-actor events. The 2026 bar adds the october–december forecast; 2027–2030 use the bias-corrected three-year average.",
+        caption: "Fatal incidents including unknown gunmen. The 2026 bar adds the october–december forecast to what was recorded through september.",
       },
       { type: "heading", text: "How far ahead can you see?" },
       {
         type: "paragraph",
-        text: "At the level of individual places, further than I expected. One month out, the 39 local governments the model ranks highest hold 64% of the next month’s events. A year out they still hold 59%, and two years out 57%. The model beats simply carrying last year’s average forward up to about 18 months, and after that the gap closes.",
+        text: "The next few sections come from the original analysis on UCDP’s final data, 2010–2025. At the level of individual places, the model sees further than I expected. One month out, the 39 local governments it ranks highest hold 64% of the next month’s events. A year out they still hold 59%, and two years out 57%. It beats simply carrying last year’s average forward up to about 18 months, and after that the gap closes.",
       },
       {
         type: "figure",
@@ -145,21 +149,21 @@ export const journalPosts: JournalPost[] = [
       {
         type: "list",
         items: [
-          "2026 is preliminary. UCDP revises its candidate data before the final release. 57% of Nigeria’s 2026 events so far have unidentified attackers, and because final UCDP data has never kept such events, the model uses identified actors only and treats the rest as an upper bound.",
-          "Fatal events only. Kidnappings and non-lethal attacks are missing.",
+          "Unknown gunmen are counted. UCDP’s final releases drop incidents whose attackers it can’t identify. This forecast uses its preliminary releases, which keep them, for 2020–2026, and preliminary data is revised before final release.",
+          "Fatal incidents only. Kidnappings and non-lethal attacks are missing.",
+          "Before 2020 the data comes from final releases without unknown gunmen, so banditry is under-represented in the model’s long history.",
           "Patterns, not causes. The model knows where violence has been, not why. Poverty, population and displacement aren’t in it yet.",
-          "New violence is hard. 18% of test-period events struck places that had been quiet for the previous year, and the forecasts help only a little there.",
-          "Local counts are a ranking. Per-area expected counts ran about 15% high in testing. Only the national totals are recalibrated."
+          "Turning points are hard. In 2026 the model expected an easing that never came. It forecasts levels well and sees sudden surges late.",
         ],
       },
       { type: "heading", text: "How it was built" },
       {
         type: "paragraph",
-        text: "I used 7,015 events from 2010–2025 that could be placed in a specific local government, 91% of all Nigerian events in UCDP’s GED v26.1, joined to geoBoundaries’ 774 areas, then added UCDP’s preliminary events for January to September 2026. The main model regresses next month’s events on each area’s recent violence, its neighbours’ violence, the jihadist share of past events, distance to Lake Chad and the land border, area and the rainy season. Forecasts beyond one month use a separate model for each lead time, refitted on data through September 2026.",
+        text: "Incidents come from UCDP: its final Georeferenced Event Dataset (v26.1) for 2010–2019 and its preliminary Candidate releases for 2020–2026, placed in geoBoundaries’ 774 local government areas and counted by month. The main model regresses each month’s incidents on an area’s own recent violence, its neighbours’ violence, the jihadist share of past events, distance to Lake Chad and the land border, area and the rainy season, with a separate model for each lead time. It was trained to December 2025 and judged on January–September 2026, then refitted on everything to September 2026 for the forecasts here.",
       },
       {
         type: "paragraph",
-        text: "Data: UCDP GED v26.1 and Candidate v26.01.26.09 (Sundberg & Melander, 2013; Hegre et al., 2020). Boundaries: geoBoundaries (CC BY 4.0).",
+        text: "Data: UCDP GED v26.1 and Candidate releases 2020–2026 (Sundberg & Melander, 2013; Hegre et al., 2020). Boundaries: geoBoundaries (CC BY 4.0).",
       },
     ],
   },

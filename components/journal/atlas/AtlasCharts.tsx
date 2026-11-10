@@ -4,7 +4,7 @@ import { useState, type PointerEvent } from "react";
 
 import atlas from "@/lib/content/nigeria-atlas-data.json";
 
-import { AS_OF, ChartTip, LegendKey, Pills, fmtMonth, useChartWidth } from "./shared";
+import { AS_OF, ChartTip, LegendKey, fmtMonth, useChartWidth } from "./shared";
 
 const monthIndex = (m: string) => {
   const [y, mo] = m.split("-").map(Number);
@@ -41,24 +41,21 @@ const pointerIn = (e: PointerEvent<SVGElement>): Pointer => {
 
 export function AtlasStats() {
   const i = atlas.nat.month.indexOf(AS_OF);
-  const { jan_sep: janSep } = atlas.score;
+  const { score } = atlas;
   const stats = [
     [
       String(Math.round(atlas.nat.central[i])),
-      `fatal events expected across Nigeria in ${fmtMonth(AS_OF)} (80% range ${Math.round(atlas.nat.lo_10[i])}–${Math.round(atlas.nat.hi_90[i])})`,
+      `fatal incidents expected across Nigeria in ${fmtMonth(AS_OF)} (80% range ${Math.round(atlas.nat.lo_10[i])}–${Math.round(atlas.nat.hi_90[i])})`,
     ],
     [
-      `${janSep.months_inside80} of 9`,
-      "months of 2026 landed inside the forecast’s 80% range, for events with identified actors",
+      score.obs.toLocaleString("en-GB"),
+      `incidents recorded January–September 2026, against ${score.fc} forecast`,
     ],
     [
-      `${Math.round(atlas.score.share_events_in_top10pct_forecast_lgas * 100)}%`,
-      "of those 2026 events fell in the 10% of LGAs the forecast flagged",
+      `${Math.round(score.top10 * 100)}%`,
+      `of them fell in the 10% of LGAs the forecast flagged, up from ${Math.round(score.top10_old * 100)}% for the first model`,
     ],
-    [
-      `${Math.round((1 - janSep.observed_identified / janSep.observed_all) * 100)}%`,
-      "of 2026’s preliminary events have unidentified attackers, and the model can’t see them",
-    ],
+    ["57%", "of 2026’s incidents have unknown attackers, which UCDP’s final data leaves out"],
   ];
   return (
     <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-y border-border py-8 md:grid-cols-4">
@@ -79,13 +76,12 @@ export function ScorecardChart() {
   const [tip, setTip] = useState<(Pointer & { i: number }) | null>(null);
   const h = 300;
   const m = { l: 34, r: 12, t: 12, b: 28 };
-  const iss = atlas.issued;
-  const obs = iss.month.map((month) => atlas.hist.y[atlas.hist.month.indexOf(month)]);
-  const all = atlas.hist_all26.y;
+  const sc = atlas.score_monthly;
+  const last = sc.month.length - 1;
   const top = 175;
-  const x = (i: number) => m.l + (i / 8) * (w - m.l - m.r);
+  const x = (i: number) => m.l + (i / last) * (w - m.l - m.r);
   const y = (v: number) => h - m.b - (v / top) * (h - m.t - m.b);
-  const band = `${line(iss.hi_90.map((v, i) => [x(i), y(v)]))}${[...iss.lo_10]
+  const band = `${line(sc.hi_90.map((v, i) => [x(i), y(v)]))}${[...sc.lo_10]
     .map((v, i) => [x(i), y(v)] as const)
     .reverse()
     .map(([px, py]) => `L${px.toFixed(1)} ${py.toFixed(1)}`)
@@ -97,8 +93,8 @@ export function ScorecardChart() {
         items={[
           { label: "Forecast from Dec 2025", swatch: lineSwatch("var(--cta)") },
           { label: "80% range", swatch: areaSwatch(0.28) },
-          { label: "Recorded, identified actors", swatch: lineSwatch("var(--foreground)") },
-          { label: "Incl. unconfirmed", swatch: lineSwatch("var(--muted-foreground)", true) },
+          { label: "Recorded", swatch: lineSwatch("var(--foreground)") },
+          { label: "First model, without unknown gunmen", swatch: lineSwatch("var(--muted-foreground)", true) },
         ]}
       />
       <div ref={ref} className="relative mt-4" style={{ height: h }}>
@@ -107,12 +103,12 @@ export function ScorecardChart() {
             width={w}
             height={h}
             role="img"
-            aria-label="January to September 2026: recorded events with identified actors stayed inside the forecast's 80% range every month, while all preliminary events ran far above it."
+            aria-label="January to September 2026: the forecast expected incidents to ease, but they rose from April, landing inside its 80% range in 4 of 9 months. The first model, without unknown gunmen, sat far below."
             className="block touch-pan-y"
             onPointerMove={(e) => {
               const p = pointerIn(e);
-              const raw = Math.round(((p.x - m.l) / (w - m.l - m.r)) * 8);
-              setTip({ ...p, i: Math.max(0, Math.min(8, raw)) });
+              const raw = Math.round(((p.x - m.l) / (w - m.l - m.r)) * last);
+              setTip({ ...p, i: Math.max(0, Math.min(last, raw)) });
             }}
             onPointerLeave={() => setTip(null)}
           >
@@ -124,34 +120,34 @@ export function ScorecardChart() {
                 </text>
               </g>
             ))}
-            {iss.month.map((month, i) =>
+            {sc.month.map((month, i) =>
               w < 480 && i % 2 ? null : (
-                <text key={month} x={x(i)} y={h - 8} textAnchor={i === 0 ? "start" : i === 8 ? "end" : "middle"} className={axisText}>
+                <text key={month} x={x(i)} y={h - 8} textAnchor={i === 0 ? "start" : i === last ? "end" : "middle"} className={axisText}>
                   {fmtMonth(month, "short").slice(0, 3)}
                 </text>
               ),
             )}
             <path d={band} fill="var(--cta)" fillOpacity={0.24} />
-            <path d={line(all.map((v, i) => [x(i), y(v)]))} fill="none" stroke="var(--muted-foreground)" strokeDasharray="4 3" strokeWidth={1.5} />
-            <path d={line(iss.central.map((v, i) => [x(i), y(v)]))} fill="none" stroke="var(--cta)" strokeWidth={2} />
-            <path d={line(obs.map((v, i) => [x(i), y(v)]))} fill="none" stroke="var(--foreground)" strokeWidth={2} />
+            <path d={line(sc.old.map((v, i) => [x(i), y(v)]))} fill="none" stroke="var(--muted-foreground)" strokeDasharray="4 3" strokeWidth={1.5} />
+            <path d={line(sc.central.map((v, i) => [x(i), y(v)]))} fill="none" stroke="var(--cta)" strokeWidth={2} />
+            <path d={line(sc.obs.map((v, i) => [x(i), y(v)]))} fill="none" stroke="var(--foreground)" strokeWidth={2} />
             {tip ? (
               <g pointerEvents="none">
                 <line x1={x(tip.i)} x2={x(tip.i)} y1={m.t} y2={h - m.b} stroke="var(--foreground)" strokeOpacity={0.35} />
-                <circle cx={x(tip.i)} cy={y(obs[tip.i])} r={4.5} fill="var(--background)" stroke="var(--foreground)" strokeWidth={2} />
+                <circle cx={x(tip.i)} cy={y(sc.obs[tip.i])} r={4.5} fill="var(--background)" stroke="var(--foreground)" strokeWidth={2} />
               </g>
             ) : null}
           </svg>
         ) : null}
         {tip ? (
           <ChartTip x={tip.x} y={tip.y} width={w}>
-            <span className="font-medium">{fmtMonth(iss.month[tip.i])}</span>
+            <span className="font-medium">{fmtMonth(sc.month[tip.i])}</span>
             <br />
-            Forecast {Math.round(iss.central[tip.i])} ({Math.round(iss.lo_10[tip.i])}–{Math.round(iss.hi_90[tip.i])})
+            Forecast {Math.round(sc.central[tip.i])} ({Math.round(sc.lo_10[tip.i])}–{Math.round(sc.hi_90[tip.i])})
             <br />
-            Recorded {obs[tip.i]}
+            Recorded {sc.obs[tip.i]}
             <br />
-            Incl. unconfirmed {all[tip.i]}
+            First model {Math.round(sc.old[tip.i])}
           </ChartTip>
         ) : null}
       </div>
@@ -162,40 +158,47 @@ export function ScorecardChart() {
 export function ScorecardTables() {
   const th = "pb-2 text-left text-xs font-normal text-muted-foreground lowercase";
   const num = "py-1.5 text-right tabular-nums";
-  const headers = ["Forecast", "Recorded", "Incl. unconfirmed"];
   const states = atlas.score_states;
   const tables = [
     {
       caption: "By state, January–September 2026",
-      first: "State",
-      rows: states.state.map((name, i) => [name, states.fc[i].toFixed(0), states.obs[i], states.obs_all[i]] as const),
+      headers: ["State", "Forecast", "Recorded", "First model"],
+      rows: states.state.map((name, i) => [
+        name,
+        states.fc[i].toFixed(0),
+        String(states.obs[i]),
+        states.fc_old[i].toFixed(0),
+      ]),
     },
     {
       caption: "What the forecast missed most",
-      first: "LGA",
-      rows: atlas.surprises.map((s) => [`${s.lga}, ${s.state}`, s.fc.toFixed(1), s.obs, s.obs_all] as const),
+      headers: ["LGA", "Forecast", "Recorded"],
+      rows: atlas.surprises.map((s) => [`${s.lga}, ${s.state}`, s.fc.toFixed(1), String(s.obs)]),
     },
   ];
   return (
     <div className="grid gap-10 md:grid-cols-2">
       {tables.map((table) => (
-        <table key={table.first} className="w-full text-sm">
+        <table key={table.caption} className="w-full self-start text-sm">
           <caption className="pb-3 text-left font-heading text-lg">{table.caption}</caption>
           <thead>
             <tr className="border-b border-border">
-              <th scope="col" className={th}>{table.first}</th>
-              {headers.map((header) => (
-                <th key={header} scope="col" className={`${th} pl-3 text-right`}>{header}</th>
+              {table.headers.map((header, i) => (
+                <th key={header} scope="col" className={i ? `${th} pl-3 text-right` : th}>
+                  {header}
+                </th>
               ))}
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
-            {table.rows.map(([name, fc, obs, all]) => (
+            {table.rows.map(([name, ...values]) => (
               <tr key={name}>
                 <th scope="row" className="py-1.5 pr-2 text-left font-normal">{name}</th>
-                <td className={num}>{fc}</td>
-                <td className={num}>{obs}</td>
-                <td className={`${num} text-muted-foreground`}>{all}</td>
+                {values.map((value, i) => (
+                  <td key={i} className={i === 2 ? `${num} text-muted-foreground` : num}>
+                    {value}
+                  </td>
+                ))}
               </tr>
             ))}
           </tbody>
@@ -211,22 +214,22 @@ export function OutlookChart() {
   const [ref, w] = useChartWidth();
   const [tip, setTip] = useState<(Pointer & { key: number }) | null>(null);
   const h = 320;
-  const m = { l: 40, r: 8, t: 12, b: 28 };
-  const { years, y2026, outlook } = atlas;
-  const allYears = [...years.year, 2026, ...outlook.year];
-  const top = 1000;
+  const m = { l: 44, r: 8, t: 12, b: 28 };
+  const { outlook, q4 } = atlas;
+  const recorded = Object.entries(atlas.years).map(([year, total]) => ({ year: Number(year), total }));
+  const allYears = [...recorded.map((r) => r.year), ...outlook.year];
+  const top = Math.ceil(Math.max(...outlook.hi80) / 500) * 500;
+  const ticks = Array.from({ length: top / 500 + 1 }, (_, i) => i * 500);
   const slot = (w - m.l - m.r) / allYears.length;
-  const bar = Math.min(slot - 2, 36);
+  const bar = Math.min(slot - 4, 40);
   const cx = (year: number) => m.l + slot * (allYears.indexOf(year) + 0.5);
-  const y = (v: number) => h - m.b - (v / top) * (h - m.t - m.b);
+  const y = (v: number) => h - m.b - (Math.min(v, top) / top) * (h - m.t - m.b);
   const column = (year: number, lo: number, hi: number, fill: string, opacity = 1) => (
     <rect x={cx(year) - bar / 2} y={y(hi)} width={bar} height={Math.max(0, y(lo) - y(hi) - 1)} rx={Math.min(3, bar / 3)} fill={fill} fillOpacity={opacity} />
   );
-  const step = w < 480 ? 3 : w < 760 ? 2 : 1;
-  const est2026 = y2026.recorded + y2026.q4;
   const hoverYear = tip ? allYears[tip.key] : null;
   const fIdx = hoverYear ? outlook.year.indexOf(hoverYear) : -1;
-  const yIdx = hoverYear ? years.year.indexOf(hoverYear) : -1;
+  const rec = recorded.find((r) => r.year === hoverYear);
 
   return (
     <div>
@@ -234,7 +237,7 @@ export function OutlookChart() {
         items={[
           { label: "Recorded", swatch: <span className="inline-block size-2.5 rounded-xs bg-muted-foreground" /> },
           { label: "Forecast", swatch: <span className="inline-block size-2.5 rounded-xs bg-cta" /> },
-          { label: "80% and 95% range", swatch: lineSwatch("var(--foreground)") },
+          { label: "80% range", swatch: lineSwatch("var(--foreground)") },
         ]}
       />
       <div ref={ref} className="relative mt-4" style={{ height: h }}>
@@ -243,7 +246,7 @@ export function OutlookChart() {
             width={w}
             height={h}
             role="img"
-            aria-label="Yearly fatal events from 2012, with an outlook of roughly 650 to 690 events a year from 2027 to 2030 and wide uncertainty ranges."
+            aria-label="Yearly fatal incidents including unknown gunmen from 2020: about 1,700 expected in 2026, 1,650 in 2027, then about 1,200 a year to 2030, with wide ranges."
             className="block touch-pan-y"
             onPointerMove={(e) => {
               const p = pointerIn(e);
@@ -251,31 +254,29 @@ export function OutlookChart() {
             }}
             onPointerLeave={() => setTip(null)}
           >
-            {[0, 250, 500, 750, 1000].map((t) => (
+            {ticks.map((t) => (
               <g key={t}>
                 <line x1={m.l} x2={w - m.r} y1={y(t)} y2={y(t)} stroke="var(--border)" />
                 <text x={m.l - 8} y={y(t) + 4} textAnchor="end" className={axisText}>
-                  {t}
+                  {t.toLocaleString("en-GB")}
                 </text>
               </g>
             ))}
             {allYears.map((year, i) =>
-              (allYears.length - 1 - i) % step ? null : (
+              w < 420 && i % 2 ? null : (
                 <text key={year} x={cx(year)} y={h - 8} textAnchor="middle" className={axisText}>
                   {year}
                 </text>
               ),
             )}
-            {years.year.map((year, i) => (
-              <g key={year}>{column(year, 0, years.y[i], "var(--muted-foreground)")}</g>
+            {recorded.map((r) => (
+              <g key={r.year}>{column(r.year, 0, r.total, "var(--muted-foreground)")}</g>
             ))}
-            {column(2026, 0, y2026.recorded, "var(--muted-foreground)")}
-            {column(2026, y2026.recorded, est2026, "var(--cta)", 0.55)}
+            {column(2026, atlas.years["2026"], atlas.years["2026"] + q4, "var(--cta)", 0.55)}
             {outlook.year.map((year, i) => (
               <g key={year}>
                 {column(year, 0, outlook.central[i], "var(--cta)")}
-                <line x1={cx(year)} x2={cx(year)} y1={y(outlook.lo95[i])} y2={y(outlook.hi95[i])} stroke="var(--foreground)" />
-                <line x1={cx(year)} x2={cx(year)} y1={y(outlook.lo80[i])} y2={y(outlook.hi80[i])} stroke="var(--foreground)" strokeWidth={3} />
+                <line x1={cx(year)} x2={cx(year)} y1={y(outlook.lo80[i])} y2={y(outlook.hi80[i])} stroke="var(--foreground)" strokeWidth={3} strokeLinecap="round" />
               </g>
             ))}
           </svg>
@@ -284,18 +285,21 @@ export function OutlookChart() {
           <ChartTip x={tip.x} y={tip.y} width={w}>
             <span className="font-medium">{hoverYear}</span>
             <br />
-            {yIdx >= 0 ? `${years.y[yIdx]} recorded events` : null}
             {hoverYear === 2026 ? (
               <>
-                {y2026.recorded} recorded through September
-                <br />+{Math.round(y2026.q4)} forecast for Oct–Dec
+                {rec?.total.toLocaleString("en-GB")} recorded through September
+                <br />+{q4} forecast for Oct–Dec
               </>
+            ) : rec ? (
+              `${rec.total.toLocaleString("en-GB")} recorded incidents`
             ) : null}
             {fIdx >= 0 ? (
               <>
-                {Math.round(outlook.central[fIdx])} forecast events
+                {Math.round(outlook.central[fIdx]).toLocaleString("en-GB")} forecast incidents
                 <br />
-                80% range {Math.round(outlook.lo80[fIdx])}–{Math.round(outlook.hi80[fIdx])}
+                80% range {Math.round(outlook.lo80[fIdx]).toLocaleString("en-GB")}–{Math.round(outlook.hi80[fIdx]).toLocaleString("en-GB")}
+                <br />
+                95% range {Math.round(outlook.lo95[fIdx]).toLocaleString("en-GB")}–{Math.round(outlook.hi95[fIdx]).toLocaleString("en-GB")}
               </>
             ) : null}
           </ChartTip>
@@ -309,18 +313,15 @@ export function OutlookChart() {
 
 export function NationalChart() {
   const [ref, w] = useChartWidth();
-  const [range, setRange] = useState<"2018" | "2010">("2018");
   const [tip, setTip] = useState<(Pointer & { key: number }) | null>(null);
 
   const h = 340;
   const m = { l: 34, r: 8, t: 26, b: 28 };
-  const first = monthIndex(`${range}-01`);
+  const first = monthIndex(atlas.hist.month[0]);
   const last = monthIndex("2027-12");
   const x = (i: number) => m.l + ((i - first) / (last - first)) * (w - m.l - m.r);
 
-  const hist = atlas.hist.month
-    .map((month, i) => ({ i: monthIndex(month), month, y: atlas.hist.y[i] }))
-    .filter((d) => d.i >= first);
+  const hist = atlas.hist.month.map((month, i) => ({ i: monthIndex(month), month, y: atlas.hist.y[i] }));
   const nat = atlas.nat;
   const forecast = nat.month.map((month, i) => ({
     i: monthIndex(month),
@@ -335,15 +336,13 @@ export function NationalChart() {
   const anchor = { i: end.i, month: end.month, c: end.y, lo10: end.y, hi90: end.y, lo025: end.y, hi975: end.y };
   const joined = [anchor, ...forecast];
 
-  const unconfirmed = atlas.hist_all26.month.map((month, i) => ({ i: monthIndex(month), y: atlas.hist_all26.y[i] }));
-
-  const top = Math.ceil(Math.max(...hist.map((d) => d.y), ...nat.hi_975, ...unconfirmed.map((d) => d.y)) / 25) * 25;
+  const top = Math.ceil(Math.max(...hist.map((d) => d.y), ...nat.hi_975) / 50) * 50;
   const y = (v: number) => h - m.b - (v / top) * (h - m.t - m.b);
-  const yTicks = Array.from({ length: Math.floor(top / 25) + 1 }, (_, i) => i * 25);
+  const yTicks = Array.from({ length: top / 50 + 1 }, (_, i) => i * 50);
 
-  const yearStep = w < 480 ? (range === "2010" ? 4 : 2) : range === "2010" ? 2 : 1;
-  const years = Array.from({ length: 2027 - Number(range) + 1 }, (_, i) => Number(range) + i).filter(
-    (year) => (year - Number(range)) % yearStep === 0,
+  const firstYear = Number(atlas.hist.month[0].slice(0, 4));
+  const years = Array.from({ length: 2027 - firstYear + 1 }, (_, i) => firstYear + i).filter(
+    (year) => w >= 480 || (year - firstYear) % 2 === 0,
   );
 
   const band = (lo: "lo10" | "lo025", hi: "hi90" | "hi975") =>
@@ -368,33 +367,21 @@ export function NationalChart() {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <LegendKey
-          items={[
-            { label: "Recorded", swatch: lineSwatch("var(--muted-foreground)") },
-            { label: "Incl. unconfirmed", swatch: lineSwatch("var(--muted-foreground)", true) },
-            { label: "Forecast", swatch: lineSwatch("var(--cta)") },
-            { label: "80% range", swatch: areaSwatch(0.32) },
-            { label: "95% range", swatch: areaSwatch(0.14) },
-          ]}
-        />
-        <Pills
-          label="Time range"
-          value={range}
-          onChange={setRange}
-          options={[
-            { value: "2018", label: "Since 2018" },
-            { value: "2010", label: "Since 2010" },
-          ]}
-        />
-      </div>
+      <LegendKey
+        items={[
+          { label: "Recorded", swatch: lineSwatch("var(--muted-foreground)") },
+          { label: "Forecast", swatch: lineSwatch("var(--cta)") },
+          { label: "80% range", swatch: areaSwatch(0.32) },
+          { label: "95% range", swatch: areaSwatch(0.14) },
+        ]}
+      />
       <div ref={ref} className="relative mt-4" style={{ height: h }}>
         {w > 0 ? (
           <svg
             width={w}
             height={h}
             role="img"
-            aria-label="Monthly fatal events in Nigeria, recorded through September 2026 and forecast through December 2027 with 80% and 95% ranges."
+            aria-label="Monthly fatal incidents in Nigeria including unknown gunmen, recorded from 2020 through September 2026 and forecast through December 2027 with 80% and 95% ranges."
             className="block touch-pan-y"
             onPointerMove={onMove}
             onPointerLeave={() => setTip(null)}
@@ -408,13 +395,7 @@ export function NationalChart() {
               </g>
             ))}
             {years.map((year) => (
-              <text
-                key={year}
-                x={x(monthIndex(`${year}-01`))}
-                y={h - 8}
-                textAnchor="start"
-                className={axisText}
-              >
+              <text key={year} x={x(monthIndex(`${year}-01`))} y={h - 8} textAnchor="start" className={axisText}>
                 {year}
               </text>
             ))}
@@ -428,13 +409,6 @@ export function NationalChart() {
               strokeLinejoin="round"
             />
             <path
-              d={line(unconfirmed.map((d) => [x(d.i), y(d.y)]))}
-              fill="none"
-              stroke="var(--muted-foreground)"
-              strokeWidth={1.5}
-              strokeDasharray="4 3"
-            />
-            <path
               d={line(joined.map((d) => [x(d.i), y(d.c)]))}
               fill="none"
               stroke="var(--cta)"
@@ -443,14 +417,7 @@ export function NationalChart() {
             />
             {marks.map((mark) => (
               <g key={mark.label}>
-                <line
-                  x1={x(mark.i)}
-                  x2={x(mark.i)}
-                  y1={m.t - 12}
-                  y2={h - m.b}
-                  stroke="var(--muted-foreground)"
-                  strokeDasharray="3 3"
-                />
+                <line x1={x(mark.i)} x2={x(mark.i)} y1={m.t - 12} y2={h - m.b} stroke="var(--muted-foreground)" strokeDasharray="3 3" />
                 <text x={x(mark.i) + mark.dx} y={m.t - 4} textAnchor={mark.anchor} className={axisText}>
                   {mark.label}
                 </text>
@@ -475,20 +442,14 @@ export function NationalChart() {
           <ChartTip x={tip.x} y={tip.y} width={w}>
             <span className="font-medium">{fmtMonth(hoveredHist.month)}</span>
             <br />
-            {hoveredHist.y} recorded events
-            {unconfirmed.some((d) => d.i === hoveredHist.i) ? (
-              <>
-                <br />
-                {unconfirmed.find((d) => d.i === hoveredHist.i)?.y} incl. unconfirmed
-              </>
-            ) : null}
+            {hoveredHist.y} recorded incidents
           </ChartTip>
         ) : null}
         {tip && hoveredFc ? (
           <ChartTip x={tip.x} y={tip.y} width={w}>
             <span className="font-medium">{fmtMonth(hoveredFc.month)}</span>
             <br />
-            {Math.round(hoveredFc.c)} forecast events
+            {Math.round(hoveredFc.c)} forecast incidents
             <br />
             80% range {Math.round(hoveredFc.lo10)}–{Math.round(hoveredFc.hi90)}
           </ChartTip>
